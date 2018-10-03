@@ -1,0 +1,81 @@
+mixin popup(el)
+	case el.name
+
+		when 'calc-popup'
+			+b.popup(data-popup-id='calc-popup', tabindex='-1', role='dialog')
+				+e.container
+					+e.close.js-popup-close: +i('close')
+					+b.calc-popup
+						+e.top-text
+							+e.H2.title.title
+								span ЗАПРОС
+								= ' '
+								| РАСЧЕТА
+							+e.P.descr Заполните форму для получения расчета
+						+e.FORM.form.js-submit-thanks(action='#!' method='POST')
+							+b.form-field.calc-popup__form-field
+								+e.INPUT.input(type='text' name='' placeholder='Ваше имя' required)
+							+b.form-field.form-field.calc-popup__form-field
+								+e.INPUT.input.js-tel-input(type='text' name='tel' placeholder='+7(---)--- -- --' required)
+							+b.form-field.form-field.calc-popup__form-field
+								+e.INPUT.input(type='text' name='email' placeholder='E-mail' required)
+							+b.form-field.form-field.calc-popup__form-field
+								+b.TEXTAREA.textarea(placeholder='Сообщение')
+
+							+b.form-upload.calc-popup__upload
+								+e.H6.title Добавить файл
+								+e.actions
+									+e.actions-item
+										+e.actions-item-inner
+											+e.LABEL.btn
+												+i('circle-plus', 'form-upload__btn-icon')
+												+e.SPAN.btn-text добавить файл
+												+e.INPUT.input(type='file' accept='image/*' name='file' )
+											+e.P.btn-hint Формат: PNG, JPEG, GIF, BMP
+											+e.success
+												+i('file-add', 'form-upload__success-icon')
+												+e.success-text Файл добавлен
+											+e.remove
+												+e.BUTTON.remove-btn(type='button')
+													+i('remove-circle', 'form-upload__remove-icon')
+													span удалить файл
+
+									+e.actions-item
+										+e.actions-item-inner
+											+e.LABEL.btn
+												+i('circle-plus', 'form-upload__btn-icon')
+												+e.SPAN.btn-text добавить файл
+												+e.INPUT.input(type='file' accept='image/*' name='file' )
+											+e.P.btn-hint Формат: PNG, JPEG, GIF, BMP
+											+e.success
+												+i('file-add', 'form-upload__success-icon')
+												+e.success-text Файл добавлен
+											+e.remove
+												+e.BUTTON.remove-btn(type='button')
+													+i('remove-circle', 'form-upload__remove-icon')
+													span удалить файл
+
+									+e.actions-item
+										+e.actions-item-inner
+											+e.LABEL.btn
+												+i('circle-plus', 'form-upload__btn-icon')
+												+e.SPAN.btn-text добавить файл
+												+e.INPUT.input(type='file' accept='image/*' name='file' )
+											+e.P.btn-hint Формат: PNG, JPEG, GIF, BMP
+											+e.success
+												+i('file-add', 'form-upload__success-icon')
+												+e.success-text Файл добавлен
+											+e.remove
+												+e.BUTTON.remove-btn(type='button')
+													+i('remove-circle', 'form-upload__remove-icon')
+													span удалить файл
+
+							+e.INPUT.submit-btn.btn._orange(type='submit' value='Отправить')
+
+		when 'thanks-popup'
+			+b.popup(data-popup-id='thanks-popup', tabindex='-1', role='dialog')
+				+e.container
+					+e.close.js-popup-close: +i('close')
+					+b.thanks-popup
+						+e.P.text Спасибо за заявку!
+						+e.BUTTON.btn(data-popup-target='thanks-popup' type='button')

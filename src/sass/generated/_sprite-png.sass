@@ -1,0 +1,107 @@
+$icons: (0:0)
+$icons: map-merge($icons,('prod-label-1': (X: -81px, Y:-223px, W: 70px, H: 71px, TW: 313px, TH: 294px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('prod-label-2': (X: -161px, Y:-223px, W: 70px, H: 71px, TW: 313px, TH: 294px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('prod-label-3': (X: -123px, Y:-120px, W: 71px, H: 71px, TW: 313px, TH: 294px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('prod-label-4': (X: -242px, Y:0px, W: 71px, H: 71px, TW: 313px, TH: 294px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('prod-label-5': (X: -242px, Y:-81px, W: 71px, H: 71px, TW: 313px, TH: 294px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('prod-label-6': (X: 0px, Y:-223px, W: 71px, H: 71px, TW: 313px, TH: 294px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('prod-label-7': (X: -241px, Y:-223px, W: 70px, H: 71px, TW: 313px, TH: 294px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('request_label': (X: 0px, Y:0px, W: 113px, H: 213px, TW: 313px, TH: 294px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('rus-made_label': (X: -123px, Y:0px, W: 109px, H: 50px, TW: 313px, TH: 294px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('rus-made_label_dark': (X: -123px, Y:-60px, W: 109px, H: 50px, TW: 313px, TH: 294px, IMG: '../img/sprite.png')))
+
+
+// Gets an attribute from the sass map
+@function icon-attr($icon, $attr)
+  $icon: map-get($icons, $icon)
+  @return map-get($icon, $attr)
+
+@mixin sprite($iconName)
+  background-image: url(icon-attr($iconName, IMG))
+  width: icon-attr($iconName, W)
+  height: icon-attr($iconName, H)
+  background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-position($iconName)
+  background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-retina($iconName)
+  background-image: url(icon-attr($iconName, IMG))
+  $width: icon-attr($iconName, W)
+  $height: icon-attr($iconName, H)
+  width: $width/2
+  height: $height/2
+  $x: icon-attr($iconName, X)
+  $y: icon-attr($iconName, Y)
+  background-position: $x/2 $y/2
+  $tw: icon-attr($iconName, TW)   
+  $th: icon-attr($iconName, TH)
+  background-size: $tw/2 $th/2    
+
+
+@mixin s($i)
+  +sprite($i)
+@mixin sp($i)
+  +sprite-position($i)
+@mixin sr($i)
+  +sprite-retina($i)  
+
+//
+//.icon-prod-label-1
+//  width: 70px
+//  height: 71px
+//  background-image: url('../img/sprite.png')
+//  background-position: -81px -223px
+//
+//.icon-prod-label-2
+//  width: 70px
+//  height: 71px
+//  background-image: url('../img/sprite.png')
+//  background-position: -161px -223px
+//
+//.icon-prod-label-3
+//  width: 71px
+//  height: 71px
+//  background-image: url('../img/sprite.png')
+//  background-position: -123px -120px
+//
+//.icon-prod-label-4
+//  width: 71px
+//  height: 71px
+//  background-image: url('../img/sprite.png')
+//  background-position: -242px 0px
+//
+//.icon-prod-label-5
+//  width: 71px
+//  height: 71px
+//  background-image: url('../img/sprite.png')
+//  background-position: -242px -81px
+//
+//.icon-prod-label-6
+//  width: 71px
+//  height: 71px
+//  background-image: url('../img/sprite.png')
+//  background-position: 0px -223px
+//
+//.icon-prod-label-7
+//  width: 70px
+//  height: 71px
+//  background-image: url('../img/sprite.png')
+//  background-position: -241px -223px
+//
+//.icon-request_label
+//  width: 113px
+//  height: 213px
+//  background-image: url('../img/sprite.png')
+//  background-position: 0px 0px
+//
+//.icon-rus-made_label
+//  width: 109px
+//  height: 50px
+//  background-image: url('../img/sprite.png')
+//  background-position: -123px 0px
+//
+//.icon-rus-made_label_dark
+//  width: 109px
+//  height: 50px
+//  background-image: url('../img/sprite.png')
+//  background-position: -123px -60px
+//

@@ -1,0 +1,134 @@
+extends layouts/_layout
+
+block variables
+	-title = 'Материал'
+
+block content
+
+	+b.main
+
+		//begin screen
+		+b.SECTION.screen._default._white(style='background-image: url(img/bg/screen_material-bg.jpg)')
+			+e.quality-labels.quality-labels
+			+e.inner
+				+e.H2.title Материал для обивки мебели
+				+e.P.sub-title Более 50 видов качественной ткани
+				+btn('смотреть', '_white next-section-btn')
+			+b.soc-sidebar
+				+e.list
+					+e.A.link(href='#!')
+						+i('vk')
+					+e.A.link(href='#!')
+						+i('fb')
+					+e.A.link(href='#!')
+						+i('inst')
+					+e.A.link(href='#!')
+						+i('od')
+					+e.A.link(href='#!')
+						+i('at')
+				+e.P.title Мы в социальных сетях
+		//end screen
+
+		//begin material
+		+b.SECTION.material
+			+e.block
+				.container
+					+breadcrumbs('Главная', 'Каталог', 'Мебель для ресторанов', 'Стулья', 'Стул для ресторана Birol', 'Материалы')
+					+e.H2.block-title.title-decor Велюр
+					.row
+						-i = 0
+						-
+							itemNamesList = [[
+							'PALITRA 10025',
+							'IGRODIZA 10046',
+							'PALITRA 10025',
+							'IGRODIZA 10046',
+							'PALITRA 10025',
+							'IGRODIZA 10046',
+							'PALITRA 10025',
+							'IGRODIZA 10046',
+							'PALITRA 10025',
+							'IGRODIZA 10046',
+							'PALITRA 10025',
+							'IGRODIZA 10046'
+							]]
+						while i < 12
+							+e.col.col.col-xs
+								+e.A.item(href='img/material/material-lg.jpg' data-fancybox='material-gallery-1')
+									+e.DIV.item-img-wrap
+										+e.IMG(src=`img/material/material-${i + 1}.jpg` alt='image')
+										+i('search', 'material__item-icon')
+									each itemName in itemNamesList
+										+e.SPAN.item-name= itemName[i]
+							-i++
+					+pagination()
+
+			+e.block
+				.container
+					+e.H2.block-title.title-decor Кожа
+					.row
+						-i = 0
+						-
+							itemNamesList = [[
+							'PALITRA 10025',
+							'IGRODIZA 10046',
+							'PALITRA 10025',
+							'IGRODIZA 10046',
+							'PALITRA 10025',
+							'IGRODIZA 10046',
+							'PALITRA 10025',
+							'IGRODIZA 10046',
+							'PALITRA 10025',
+							'IGRODIZA 10046',
+							'PALITRA 10025',
+							'IGRODIZA 10046'
+							]]
+						while i < 12
+							+e.col.col.col-xs
+								+e.A.item(href='img/material/material-lg.jpg' data-fancybox='material-gallery-2')
+									+e.DIV.item-img-wrap
+										+e.IMG(src=`img/material/material-${i + 1}.jpg` alt='image')
+										+i('search', 'material__item-icon')
+									each itemName in itemNamesList
+										+e.SPAN.item-name= itemName[i]
+							-i++
+					+pagination()
+
+			+e.block
+				.container
+					+e.H2.block-title.title-decor Замша
+					.row
+						-i = 0
+						-
+							itemNamesList = [[
+							'PALITRA 10025',
+							'IGRODIZA 10046',
+							'PALITRA 10025',
+							'IGRODIZA 10046',
+							'PALITRA 10025',
+							'IGRODIZA 10046',
+							'PALITRA 10025',
+							'IGRODIZA 10046',
+							'PALITRA 10025',
+							'IGRODIZA 10046',
+							'PALITRA 10025',
+							'IGRODIZA 10046'
+							]]
+						while i < 12
+							+e.col.col.col-xs
+								+e.A.item(href='img/material/material-lg.jpg' data-fancybox='material-gallery-3')
+									+e.DIV.item-img-wrap
+										+e.IMG(src=`img/material/material-${i + 1}.jpg` alt='image')
+										+i('search', 'material__item-icon')
+									each itemName in itemNamesList
+										+e.SPAN.item-name= itemName[i]
+							-i++
+					+pagination()
+		//end material
+
+		//begin how-text
+		+b.SECTION.how-text.section
+			+e.container.container
+				+e.H2.title.title Как выбрать для рестрона?
+				+e.P Как и весь мировой прогресс, наша фабрика не стоит на месте, постоянно совершенствуя уже отлаженный за годы работы механизм производства мебели. Особое внимание уделяется мировым тенденциям и направлениям в мебельной индустрии. Уже сейчас мы предлагаем нашим клиентам широчайший выбор ткани для обивки мягкой мебели, и этот ассортимент постоянно пополняется. Естественно, усиливается и контроль качества материалов производимой продукции, что обеспечивает покупателям надежность и гарантию отличного выбора. Для жителей Минска, Витебска и других регионов доступен онлайн каталог мебельных тканей, который поможет удовлетворить любые Ваши нестандартные дизайнерские решения или запросы.
+		//end how-text

@@ -1,0 +1,95 @@
+.articles
+   padding-bottom: 150px
+   +sm
+      padding-bottom: 80px
+   &_default
+      padding-top: 110px
+   &__col
+      &:not(:first-child)
+         +sm
+            margin-top: 40px
+      &_lg
+         width: percentage(800 / 1200)
+         +sm
+            width: 100%
+      &_md
+         width: percentage(400 / 1200)
+         +sm
+            width: 100%
+   &__item
+      & + &
+         margin-top: 115px
+         +sm
+            margin-top: 75px
+         +xs
+            margin-top: 50px
+
+.article
+   color: #3a3a3a
+   &_opened
+      .article__descr
+         &:not(:last-child)
+            margin-bottom: 27px
+            +xs
+               margin-bottom: 15px
+   &__img
+      margin-bottom: 32px
+      +ratio(772, 441)
+      +cover
+      +xs
+         margin-bottom: 20px
+   &__date
+      margin-bottom: 20px
+      font-size: 14px
+      letter-spacing: 0.56px
+      color: #aeaeae
+      +xs
+         margin-bottom: 10px
+   &__title
+      margin-bottom: 30px
+      font-size: 35px
+      font-weight: 700
+      line-height: 39px
+      letter-spacing: 2.1px
+      +xs
+         margin-bottom: 20px
+         letter-spacing: 1px
+   &__descr
+      &:not(:last-child)
+         margin-bottom: 35px
+         +xs
+            margin-bottom: 20px
+
+.pop-articles
+   padding: 20px 24px 15px
+   background-color: #f4f4f4
+   +xs
+      padding: 17px 15px 10px
+   &__title
+      padding-bottom: 17px
+      font-size: 20px
+      letter-spacing: 0.8px
+   &__item
+      padding: 22px 0
+      border-top: 1px solid #dcdcdc
+      &-link
+         display: block
+         +clr
+      &-img-wrap
+         float: left
+         width: 93px
+         height: 93px
+         +cover-img
+         margin-right: 20px
+      &-text
+         float: left
+         width: calc(100% - 113px)
+      &-title
+         letter-spacing: 0.56px
+         font-size: 14px
+         font-weight: 700
+         line-height: 19px
+      &-date
+         font-size: 11px
+         letter-spacing: 0.44px
+         color: #aeaeae

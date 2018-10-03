@@ -1,0 +1,113 @@
+extends layouts/_layout
+
+block variables
+	-title = 'Каталог'
+
+block content
+
+	+b.main
+
+		//begin screen
+		+b.SECTION.screen._default._white(style='background-image: url(img/bg/catalog_bg.jpg)')
+			+e.quality-labels.quality-labels
+			+b.soc-sidebar
+				+e.list
+					+e.A.link(href='#!')
+						+i('vk')
+					+e.A.link(href='#!')
+						+i('fb')
+					+e.A.link(href='#!')
+						+i('inst')
+					+e.A.link(href='#!')
+						+i('od')
+					+e.A.link(href='#!')
+						+i('at')
+				+e.P.title Мы в социальных сетях
+		//end screen
+
+		//begin assort
+		+b.SECTION.assort
+			+e.container.container
+				+breadcrumbs('Главная', 'Каталог', 'Мебель для ресторанов')
+				+e.H2.title.title-decor Мебель для ресторанов
+				.row
+					.col.col-md
+						+e.item._color-1
+							+e.IMG.item-img(src='img/products/cat-block_1.png' alt='image')
+							+e.item-text
+								+e.H4.item-text-title Диваны
+								+arrow-link('КАТАЛОГ', '_black')
+
+					.col.col-md
+						+e.item._color-1
+							+e.IMG.item-img._pos-1(src='img/products/cat-block_2.png' alt='image')
+							+e.item-text
+								+e.H4.item-text-title Кресла
+								+arrow-link('КАТАЛОГ', '_black')
+					.col.col-md
+						+e.item._color-1
+							+e.IMG.item-img._pos-2(src='img/products/cat-block_3.png' alt='image')
+							+e.item-text
+								+e.H4.item-text-title Стулья
+								+arrow-link('КАТАЛОГ', '_black')
+					.col.col-md
+						+e.item._color-1
+							+e.IMG.item-img._pos-3(src='img/products/assort-3.png' alt='image')
+							+e.item-text
+								+e.H4.item-text-title Столы
+								+arrow-link('КАТАЛОГ', '_black')
+					.col.col-md
+						+e.item._color-1
+							+e.IMG.item-img._mid(src='img/products/cat-block_4.png' alt='image')
+							+e.item-text
+								+e.H4.item-text-title Столешницы
+								+arrow-link('КАТАЛОГ', '_black')
+					.col.col-md
+						+e.item._color-1
+							+e.IMG.item-img._pos-4(src='img/products/cat-block_5.png' alt='image')
+							+e.item-text
+								+e.H4.item-text-title Подстолья
+								+arrow-link('КАТАЛОГ', '_black')
+					.col.col-md
+						+e.item._color-1
+							+e.IMG.item-img._pos-5(src='img/products/cat-block_6.png' alt='image')
+							+e.item-text
+								+e.H4.item-text-title Шкафы
+								+arrow-link('КАТАЛОГ', '_black')
+					.col.col-md
+						+e.item._color-1
+							+e.IMG.item-img._pos-6(src='img/products/cat-block_7.png' alt='image')
+							+e.item-text
+								+e.H4.item-text-title Тумбы
+								+arrow-link('КАТАЛОГ', '_black')
+					.col.col-md
+						+e.item._color-1
+							+e.item-text
+								+e.H4.item-text-title Стеновые панели
+								+arrow-link('КАТАЛОГ', '_black')
+			+b.BUTTON.request-btn(data-popup-target='calc-popup' type='button')
+		//end assort
+
+		//begin custom
+		+b.SECTION.custom.section
+			+e.container.container
+				+e.inner
+					+e.text
+						+e.H2.title.title Индивидуальный проект
+						+e.P.descr Воплотим вашу мечту в реальность
+						+btn('подробнее', '_black')
+					+e.img(style='background-image: url(img/content/custom_img.jpg)')
+		//end custom
+
+		//begin how-text
+		+b.SECTION.how-text.section
+			+e.container.container
+				+e.H2.title.title Как выбрать для рестрона?
+				+e.P Как и весь мировой прогресс, наша фабрика не стоит на месте, постоянно совершенствуя уже отлаженный за годы работы механизм производства мебели. Особое внимание уделяется мировым тенденциям и направлениям в мебельной индустрии. Уже сейчас мы предлагаем нашим клиентам широчайший выбор ткани для обивки мягкой мебели, и этот ассортимент постоянно пополняется. Естественно, усиливается и контроль качества материалов производимой продукции, что обеспечивает покупателям надежность и гарантию отличного выбора. Для жителей Минска, Витебска и других регионов доступен онлайн каталог мебельных тканей, который поможет удовлетворить любые Ваши нестандартные дизайнерские решения или запросы.
+		//end how-text
+
+block modals
+	//begin popups
+	+popup({ name: 'calc-popup'})
+	+popup({ name: 'thanks-popup'})
+	//end popups

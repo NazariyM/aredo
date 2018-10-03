@@ -1,0 +1,127 @@
+extends layouts/_layout
+
+block variables
+	-title = 'Каталог'
+
+block content
+
+	+b.main
+
+		//begin screen
+		+b.SECTION.screen._default._white(style='background-image: url(img/bg/screen_material-bg.jpg)')
+			+e.quality-labels.quality-labels
+			+e.inner
+				+e.H2.title Выбирай мебель на
+					br
+					| свой вкус
+				+e.P.sub-title Лучшие модели мебели от мебельной  фабрики AredoGroup
+				+btn('каталог', '_white next-section-btn')
+			+b.soc-sidebar
+				+e.list
+					+e.A.link(href='#!')
+						+i('vk')
+					+e.A.link(href='#!')
+						+i('fb')
+					+e.A.link(href='#!')
+						+i('inst')
+					+e.A.link(href='#!')
+						+i('od')
+					+e.A.link(href='#!')
+						+i('at')
+				+e.P.title Мы в социальных сетях
+		//end screen
+
+		//begin category
+		+b.SECTION.category
+			+e.container.container
+				+breadcrumbs('Главная', 'Каталог', 'Категории мебели')
+				+e.H2.title.title-decor Категории мебели
+				.row
+					+e.col.col.col-lg
+						+e.item._1
+							+e.item-img(style='background-image: url(img/bg/category_bg-1.jpg)')
+							+e.item-content
+								+e.H2.item-title.title Для ресторанов
+								+e.item-actions
+									+arrow-link('КАТАЛОГ', '_white')
+									+e.item-count
+										span 134
+										= ' '
+										| моделей
+
+						+e.item._2
+							+e.item-img(style='background-image: url(img/bg/category_bg-2.jpg)')
+							+e.item-content
+								+e.H2.item-title.title Для гостиниц
+								+e.item-actions
+									+arrow-link('КАТАЛОГ', '_white')
+									+e.item-count
+										span 134
+										= ' '
+										| моделей
+
+					+e.col.col.col-lg
+						+e.item-wrap
+							+e.item-links
+								+e.A.block-link(href='#!')
+									+e.IMG.block-link-img(src='img/content/category-link_img-1.png' alt='image')
+									+e.DIV.block-link-label premium
+								+e.A.block-link(href='#!')
+									+e.IMG.block-link-img(src='img/content/category-link_img-2.png' alt='image')
+									+e.DIV.block-link-label top
+
+							+e.item._3._links
+								+e.item-img(style='background-image: url(img/bg/category_bg-3.jpg)')
+								+e.item-content
+									+e.H2.item-title.title Для кафе
+									+e.item-actions
+										+arrow-link('КАТАЛОГ', '_white')
+										+e.item-count
+											span 134
+											= ' '
+											| моделей
+
+						+e.item._4
+							+e.item-img(style='background-image: url(img/bg/category_bg-4.jpg)')
+							+e.item-content
+								+e.H2.item-title.title Loft
+								+e.item-actions
+									+arrow-link('КАТАЛОГ', '_white')
+									+e.item-count
+										span 134
+										= ' '
+										| моделей
+
+						+e.item._label
+							+e.H3.item-label
+								+e.DIV.item-label-name Мебель
+								| HORECA
+								= ' '
+								span furniture
+
+						+e.item._5
+							+e.item-img(style='background-image: url(img/bg/category_bg-5.jpg)')
+							+e.item-content
+								+e.H2.item-title.title Для баров
+								+e.item-actions
+									+arrow-link('КАТАЛОГ', '_white')
+									+e.item-count
+										span 134
+										= ' '
+										| моделей
+
+			+b.BUTTON.request-btn(data-popup-target='calc-popup' type='button')
+		//end category
+
+		//begin how-text
+		+b.SECTION.how-text.section
+			+e.container.container
+				+e.H2.title.title Как выбрать для рестрона?
+				+e.P Как и весь мировой прогресс, наша фабрика не стоит на месте, постоянно совершенствуя уже отлаженный за годы работы механизм производства мебели. Особое внимание уделяется мировым тенденциям и направлениям в мебельной индустрии. Уже сейчас мы предлагаем нашим клиентам широчайший выбор ткани для обивки мягкой мебели, и этот ассортимент постоянно пополняется. Естественно, усиливается и контроль качества материалов производимой продукции, что обеспечивает покупателям надежность и гарантию отличного выбора. Для жителей Минска, Витебска и других регионов доступен онлайн каталог мебельных тканей, который поможет удовлетворить любые Ваши нестандартные дизайнерские решения или запросы.
+		//end how-text
+
+block modals
+	//begin popups
+	+popup({ name: 'calc-popup'})
+	+popup({ name: 'thanks-popup'})
+	//end popups

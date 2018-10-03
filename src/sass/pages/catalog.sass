@@ -1,0 +1,624 @@
+.assort
+   &__title
+      margin-bottom: 42px
+      +xs
+         margin-bottom: 25px
+   &__item
+      position: relative
+      display: block
+      height: 256px
+      overflow: hidden
+      transition: .3s ease-in-out
+      cursor: default
+      &:hover
+         transform: scale(1.07)
+      +sm
+         height: 226px
+      &:hover
+         .assort__item-title::after
+            width: 100%
+      &_color-1
+         background-color: $color-5
+         .assort__item-title
+            left: 43px
+            +sm
+               left: 20px
+      &_color-2
+         background-color: #f2c16d
+      &_color-3
+         background-color: $color-12
+      &-img
+         position: absolute
+         right: 0
+         bottom: 0
+         z-index: 1
+         +sm
+            height: 70%
+            width: 65%
+         +xs
+            width: auto
+         &_mid
+            top: 50%
+            transform: translateY(-50%)
+         &_pos-1
+            right: 10px
+         &_pos-2
+            right: 30px
+         &_pos-3
+            bottom: -30px
+         &_pos-4
+            right: 14px
+         &_pos-5
+            right: 20px
+            bottom: 5px
+         &_pos-6
+            bottom: 27px
+      &-title
+         position: absolute
+         top: 50%
+         left: 37px
+         z-index: 2
+         margin-top: -4px
+         transform: translateY(-50%)
+         max-width: 230px
+         padding-bottom: 18px
+         +f(23, 700, 30)
+         letter-spacing: 1.38px
+         text-transform: uppercase
+         color: $color-1
+         +sm
+            left: 20px
+            font-size: 20px
+            line-height: 26px
+            padding-bottom: 15px
+         &::after
+            position: absolute
+            left: 0
+            bottom: 0
+            width: 46px
+            height: 4px
+            background-color: $color-1
+            transition: .3s ease-in-out
+            content: ''
+      &-text
+         position: absolute
+         top: 50%
+         left: 37px
+         z-index: 2
+         margin-top: -2px
+         transform: translateY(-50%)
+         +xs
+            left: 20px
+         &-title
+            margin-bottom: 5px
+            font-weight: 700
+            font-size: 27px
+            line-height: 30px
+            letter-spacing: 1.62px
+            color: #383838
+
+.custom
+   &__inner
+      padding-left: 32px
+      +inlineContainer
+      +sm
+         padding-left: 0
+      +xs
+         display: flex
+         flex-direction: column
+   &__text
+      display: inline-block
+      vertical-align: middle
+      width: 440px
+      margin-top: -9px
+      padding-right: 30px
+      margin-right: 25px
+      +sm
+         width: 380px
+         padding-right: 30px
+         margin-right: 0
+      +xs
+         width: 100%
+         order: 1
+         padding-right: 0
+   &__title
+      margin-bottom: 15px
+      font-size: 45px
+      line-height: 49px
+      letter-spacing: 2.7px
+      +sm
+         font-size: 36px
+         line-height: 40px
+         letter-spacing: 2px
+   &__img
+      display: inline-block
+      vertical-align: middle
+      +ratio(650, 457)
+      +cover
+      width: calc(100% - 488px)
+      +sm
+         width: calc(100% - 380px)
+      +xs
+         width: 100%
+         margin-bottom: 30px
+   &__descr
+      margin-bottom: 45px
+      font-size: 18px
+      line-height: 22px
+      letter-spacing: 1.08px
+      +xs
+         margin-bottom: 30px
+
+.catalog
+   padding-bottom: 72px
+   &__title
+      margin-bottom: 42px
+   &__col
+      +sm
+         width: 33.33333%
+      +xs
+         width: 100%
+      &:nth-child(3) ~ &
+         +sm
+            padding: 30px 10px 0
+      &:nth-child(1) ~ &
+         +xs
+            padding: 30px 10px 0
+
+.category
+   padding-bottom: 78px
+   +xs
+      padding-bottom: 65px
+   &__container
+      +sm
+         padding: 0 30px
+      +xs
+         padding: 0 15px
+   &__title
+      margin-bottom: 33px
+      +xs
+         margin-bottom: 20px
+   &__col
+      &:not(:last-child)
+         +sm
+            padding-bottom: 30px
+         +xs
+            padding-bottom: 15px
+   &__item
+      $parent: &
+      position: relative
+      overflow: hidden
+      &_label
+         height: 130px
+         border: 1px solid #dcdcdc
+         +vertical
+         +xs
+            height: 100px
+         &::after
+            display: none
+      &_links
+         float: left
+         margin: 0 14px!important
+         width: calc(100% - 229px)
+         +md
+            width: 100%
+      &:not(:first-child)
+         margin-top: 30px
+         +xs
+            margin-top: 15px
+      
+      &-img
+         +cover
+         transition: 1s ease-in-out
+         #{$parent}:hover &
+            transform: scale(1.1)
+            
+         &::before
+            +sm
+               padding-top: 50% !important
+            +xs
+               padding-top: 90%!important
+         #{$parent}_1 &
+            +ratio(572, 684)
+         #{$parent}_2 &
+            +ratio(570, 543)
+         #{$parent}_3 &
+            +ratio(369, 389)
+            +md
+               +ratio(473, 286)
+         #{$parent}_4 &
+            +ratio(570, 351)
+         #{$parent}_5 &
+            +ratio(570, 297)
+            +md
+               +ratio(473, 252)
+         &::after
+            +coverdiv
+            z-index: 1
+            background-color: rgba(13, 13, 13, 0.19)
+            content: ''
+      &-content
+         position: absolute
+         top: 50%
+         left: 0
+         z-index: 2
+         width: 87.2%
+         padding: 30px 26px 32px 33px
+         transform: translate3d(0, -50%, 0)
+         background: rgba($black, .5)
+         color: $white
+         +xs
+            padding: 10px 25px
+         #{$parent}_links &
+            width: 94%
+      &-title
+         margin-bottom: 15px
+         color: $white
+         letter-spacing: 2.1px
+      &-actions
+         +justify
+         +xs
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+         &::after
+            +xs
+               display: none
+      &-count
+         display: inline-block
+         vertical-align: middle
+         min-width: 90px
+         padding: 0 9px
+         height: 25px
+         background-color: $color-12
+         color: $white
+         font-weight: 700
+         font-size: 11px
+         line-height: 25px
+         text-align: center
+         text-align-last: center
+         +xs
+            margin-top: 15px
+         #{$parent}_links &
+            margin-right: 52px
+      &-label
+         +vcenter
+         top: 44%
+         width: 100%
+         max-width: 480px
+         font-size: 60px
+         font-weight: 700
+         line-height: 30px
+         color: $color-1
+         text-align: center
+         +md
+            font-size: 50px
+            max-width: 402px
+         +xs
+            top: 50%
+            max-width: 263px
+            font-size: 32px
+         span
+            letter-spacing: .5px
+            font-weight: 300
+         &-name
+            margin-bottom: 8px
+            margin-left: 3px
+            text-align: left
+            font-weight: 400
+            font-size: 16px
+            text-transform: uppercase
+            +xs
+               margin-bottom: -4px
+      &-wrap
+         margin: 0 -14px
+         +clr
+      &-links
+         float: left
+         width: 173px
+         margin: 0 14px
+   &__block-link
+      position: relative
+      display: block
+      width: 197px
+      height: 193px
+      margin-left: -25px
+      background-color: #f2f2f2
+      +trs
+      +md
+         display: none
+      &:hover
+         background-color: darken(#f2f2f2, 11)
+      &:not(:first-child)
+         margin-top: 4px
+      &-img
+         +vcenter
+      &-label
+         position: absolute
+         right: 18px
+         bottom: 18px
+         z-index: 1
+         height: 20px
+         min-width: 66px
+         padding: 0 5px
+         font-weight: 900
+         font-size: 10px
+         letter-spacing: 0.7px
+         text-transform: uppercase
+         text-align: center
+         line-height: 15px
+         border: 3px solid $color-1
+   
+
+.product
+   padding: 110px 0 30px
+   +sm
+      padding: 35px 0 30px
+   &__container
+      position: relative
+   &__quality-labels
+      top: -70px
+      right: 15px
+      +sm
+         top: -30px
+      +xs
+         top: -15px
+         right: 27px
+   &__col
+      &:nth-child(1)
+         width: percentage(730 / 1200)
+         +sm
+            width: 100%
+            padding-bottom: 20px
+         +xs
+            display: flex
+            flex-direction: column
+            padding-bottom: 10px
+      &:nth-child(2)
+         float: right
+         width: percentage(430 / 1200)
+         +md
+            width: 38.83333%
+         +sm
+            width: 100%
+      
+   &__nav
+      float: left
+      width: 200px
+      padding-right: 20px
+      +xs
+         width: 100%
+         padding-right: 0
+      .slick-list
+         +xs
+            margin: 0 -5px
+      &-item
+         height: 190px
+         width: 100% !important
+         padding: 0 5px
+         border: 1px solid rgba(0, 0, 0, .1) !important
+         cursor: pointer
+         +cover-img
+         +md
+            height: 153px
+         +xs
+            width: calc(33.33333% - 10px) !important
+            margin: 0 5px
+            height: 100px
+         &:not(:first-child)
+            margin-top: 16px
+            +xs
+               margin: 0 5px
+   &__view
+      float: left
+      width: calc(100% - 200px)
+      border: 1px solid rgba(0, 0, 0, .1) !important
+      +xs
+         margin-bottom: 20px
+         order: -1
+         width: 100%
+      .slider-btn
+         top: auto
+         bottom: 24px
+         background-color: #ececec
+         &_prev
+            right: 75px
+            left: auto
+         &_next
+            right: 26px
+      &-item
+         height: 600px
+         +cover-img
+         +md
+            height: 490px
+         +xs
+            height: 320px
+   
+   &__labels
+      padding-top: 40px
+      clear: both
+      +clr
+   &__label
+      position: relative
+      float: left
+      width: 70px
+      height: 125px
+      text-align: center
+      line-height: 13px
+      +xs
+         height: 95px
+         width: 33.33333%
+         padding: 0 10px
+      &:not(:last-child)
+         margin-right: 20px
+         +xs
+            margin-right: 0
+      &_1 &-icon
+         +sprite('prod-label-1')
+         +xs
+            +sr('prod-label-1')
+      &_2 &-icon
+         +sprite('prod-label-2')
+         +xs
+            +sr('prod-label-2')
+      &_3 &-icon
+         +sprite('prod-label-3')
+         +xs
+            +sr('prod-label-3')
+      &_4 &-icon
+         +sprite('prod-label-4')
+         +xs
+            +sr('prod-label-4')
+      &_5 &-icon
+         +sprite('prod-label-5')
+         +xs
+            +sr('prod-label-5')
+      &_6 &-icon
+         +sprite('prod-label-6')
+         +xs
+            +sr('prod-label-6')
+      &_7 &-icon
+         +sprite('prod-label-7')
+         +xs
+            +sr('prod-label-7')
+      &-icon
+         margin-bottom: 16px
+         +xs
+            margin: 0 auto 7px
+   
+      span
+         position: absolute
+         left: 50%
+         transform: translateX(-50%)
+         min-width: 80px
+         font-size: 10px
+   &__data
+      margin-bottom: 30px
+      padding-bottom: 36px
+      border-bottom: 1px solid $color-3
+      +xs
+         margin-bottom: 20px
+         padding-bottom: 26px
+   &__title
+      margin-bottom: 20px
+      line-height: 41px
+      letter-spacing: 1.44px
+   &__price
+      margin-bottom: 24px
+      font-weight: 400
+      line-height: 25px
+      font-size: 17px
+      span
+         font-size: 25px
+   &__actions
+      //&-btn
+         margin-right: 30px
+      //&-link
+         font-size: 13px
+         font-weight: 700
+         letter-spacing: 0.52px
+         text-transform: uppercase
+         border-bottom: 1px solid rgba($color-1, .7)
+         +trs
+         &:hover
+            border-bottom-color: transparent
+   &__info
+      margin-bottom: 30px
+      padding-bottom: 33px
+      border-bottom: 1px solid $color-3
+      +xs
+         margin-bottom: 20px
+         padding-bottom: 23px
+      &-row
+         +inlineContainer
+         &:not(:first-child)
+            margin-top: 7px
+      &-title
+         display: inline-block
+         vertical-align: middle
+         margin-right: 4px
+         font-size: 16px
+         font-weight: 700
+         letter-spacing: 0.96px
+      &-descr
+         display: inline-block
+         vertical-align: middle
+         font-size: 16px
+         letter-spacing: 0.96px
+   &__descr
+      font-size: 16px
+      line-height: 25px
+      letter-spacing: 0.32px
+
+.teaser
+   padding: 32px 0 103px
+   &__row
+      padding-bottom: 78px
+      +sm
+         display: flex
+         flex-direction: column
+   &__col
+      &:nth-child(1)
+         width: percentage(630 / 1200)
+         +sm
+            width: 100%
+      &:nth-child(2)
+         float: right
+         width: percentage(530 / 1200)
+         +md
+            width: 47.16667%
+         +sm
+            order: -1
+            width: 100%
+            margin-bottom: 20px
+   &__item
+      $parent: &
+      position: relative
+      float: left
+      width: percentage(294 / 600)
+      +xs
+         width: 100%
+      &:not(:last-child)
+         margin-right: percentage(10 / 600)
+         +xs
+            margin: 0 0 10px
+   
+      &-img
+         +ratio(294, 292)
+         +cover
+         &::after
+            opacity: 0
+            +coverdiv
+            background: rgba(#262626, .4)
+            transition: .4s ease
+            content: ''
+            #{$parent}:hover &
+               opacity: 1
+               
+      &-text
+         +vcenter
+         opacity: 0
+         max-width: 235px
+         width: 100%
+         transition: .4s ease
+         #{$parent}:hover &
+            opacity: 1
+      &-title
+         margin-bottom: 10px
+         font-size: 20px
+         line-height: 25px
+         font-weight: 700
+         letter-spacing: 1.2px
+         color: $white
+   &__title
+      margin: -5px 0 23px
+      letter-spacing: 1.8px
+      line-height: 37px
+      font-size: 30px
+   &__descr
+      font-size: 16px
+      
+.suggested-prods
+   border-top: 1px solid #e8e8e8
+   &__title
+      margin-bottom: 30px

@@ -1,0 +1,76 @@
+.pop-models
+   padding: 78px 0 50px
+   &__container
+      max-width: 1210px
+   &__title
+      margin: 0 0 3px 3px
+
+.clients
+   &__title
+      margin-bottom: 41px
+   &__slider
+      padding: 0 0 40px
+      display: none
+      &.slick-initialized
+         display: block
+      .slick-list
+         margin: 0 -9px
+      .slider-btn
+         top: auto
+         bottom: -5px
+         background-color: $color-5
+         &_prev
+            left: auto
+            right: 45px
+            +xs
+               right: auto
+               left: calc(50% - 50px)
+         &_next
+            +xs
+               right: calc(50% - 50px)
+      &-item
+         padding: 0 9px 18px
+      &-link
+         display: block
+         +ratio(279, 282)
+         +vertical
+         overflow: hidden
+         +xs
+            max-width: 280px
+            margin: 0 auto
+         &:hover
+            .clients__slider-img
+               transform: scale3d(1.15, 1.15, 1.15)
+      &-img
+         +coverdiv
+         +cover
+         transition: .5s ease-in-out
+   
+      &-logo
+         position: relative
+         z-index: 1
+         display: inline-block
+         vertical-align: middle
+
+.article-section
+   padding: 78px 0
+   +sm
+      padding: 15px 0 65px
+   &__col
+      &:not(:last-child)
+         +sm
+            padding-bottom: 20px
+   &__title
+      margin-bottom: 30px
+      letter-spacing: 1.9px
+      +xs
+         margin-bottom: 15px
+         letter-spacing: 0.9px
+   &__text
+      text-align: justify
+      +xs
+         text-align: left
+   &__img
+      margin-top: 5px
+      +cover
+      +ratio(570, 721)

@@ -1,0 +1,35 @@
+ProjectTitle: Project AredoGroup
+
+PageList:
+- file: home.html
+  ready: 100
+
+- file: material.html
+  ready: 100
+
+- file: catalog-1.html
+  ready: 100
+
+- file: catalog-2.html
+  ready: 100
+
+- file: catalog-3.html
+  ready: 100
+
+- file: catalog-4.html
+  ready: 100
+
+- file: production.html
+  ready: 100
+
+- file: articles.html
+  ready: 100
+
+- file: article-opened.html
+  ready: 100
+
+- file: portfolio.html
+  ready: 100
+
+- file: contact.html
+  ready: 100

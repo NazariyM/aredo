@@ -1,0 +1,70 @@
+//BEGIN header
++b.HEADER.header(class= headerClass)
+	+e.nav-line
+		+e.nav-container.container
+			+b.logo.header__logo
+				h1 Aredo Group
+				+e.A.link(href='#!')
+					+e.IMG(src='img/other/logo.png' alt='Aredo Group')
+				+e.P.title Мебель для ресторанов
+				+e.A.tel(href='tel:+74957251485') +7 (495) 725-14-85
+			+e.NAV.nav
+				-
+					navList = [
+					'ГЛАВНАЯ',
+					'КАТАЛОГ',
+					'ПОРТФОЛИО',
+					'СТАТЬИ',
+					'ПРОИЗВОДСТВО',
+					'ШОУ-РУМ',
+					'КОНТАКТЫ'
+					]
+				+e.UL.nav-list
+					-activeIndex = 0
+					for navLink, i in navList
+						li(class= i === activeIndex ? 'is-active' : ''): a(href='#!')= navLink
+			+e.BUTTON.nav-btn(type='button')
+				+e.nav-btn-burger
+					+e.nav-btn-lines
+
+	+e.assort
+		+e.assort-container.container
+			-
+				assortList = [
+					'для ресторанов',
+					'для баров',
+					'для кафе',
+					'для уличных кафе',
+					'для гостиниц',
+					'для клубов'
+				]
+
+			+e.UL.assort-list
+				each assortItem, i in assortList
+					li
+						a(href='#!')= assortItem
+						if i === 0
+							ul.header__assort-submenu
+								li
+									a(href='#!') ДИВАНЫ ДЛЯ РЕСТОРАНОВ
+								li
+									a(href='#!') КРЕСЛА ДЛЯ РЕСТОРАНОВ
+								li
+									a(href='#!') СТУЛЬЯ LOFT
+								li
+									a(href='#!') ДИВАНЫ ДЛЯ КАФЕ
+								li
+									a(href='#!') БАРНЫЕ СТУЛЬЯ
+								li
+									a(href='#!') СТОЛЫ ДЛЯ РЕСТОРАНОВ
+								li
+									a(href='#!') ПОДСТОЛЬЯ
+								li
+									a(href='#!') СТОЛЕШНИЦЫ
+								li
+									a(href='#!') ТУМБЫ
+								li
+									a(href='#!') ШКАФЫ ДЛЯ БАРОВ
+								li
+									a(href='#!') СТУЛЬЯ ДЛЯ РЕСТОРАНОВ
+//END header

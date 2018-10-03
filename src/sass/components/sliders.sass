@@ -1,0 +1,153 @@
+.slider
+   display: none
+   &.slick-initialized
+      display: block
+      
+.slider-btn
+   position: absolute
+   top: 50%
+   z-index: 1
+   margin-top: -18px
+   width: 36px
+   height: 36px
+   background-color: #fff
+   border-radius: 50%
+   +vertical
+   &:hover
+      &::after
+         opacity: 1
+         transform: scale(1)
+      .icon
+         fill: $white
+   &::after
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: -1
+      background: darken($color-7, 10)
+      transform: scale(.5)
+      opacity: 0
+      transition: .3s ease-out
+      border-radius: 50%
+      content: ''
+   &_prev
+      left: 0
+      .icon
+         left: -1px
+   &_next
+      right: 0
+      .icon
+         right: -1px
+   .icon
+      position: relative
+      display: inline-block
+      vertical-align: middle
+      width: 14px
+      height: 14px
+      transition: .3s ease
+      
+.slider-dots
+   font-size: 0
+   line-height: 0
+   li
+      display: inline-block
+      vertical-align: middle
+      width: 10px
+      height: 10px
+      border: 1px solid $white
+      border-radius: 50%
+      +vertical
+      &:not(:last-child)
+         margin-right: 5px
+      &.slick-active
+         button
+            opacity: 1
+      button
+         display: inline-block
+         vertical-align: middle
+         opacity: 0
+         width: 6px
+         height: 6px
+         background: $white
+         border-radius: 50%
+         +hide-text
+         transition: .3s ease
+
+.prod-slider
+   background-color: $white
+   &__item
+      position: relative
+      height: 519px
+      +vertical
+      +xs
+         height: 400px
+      &-img
+         display: inline-block
+         vertical-align: middle
+         margin-top: -70px
+         +xs
+            +vcenter
+            top: 55%
+            width: 85%
+         img
+            margin: 0 auto
+      &-text
+         pointer-events: none
+         position: absolute
+         left: 0
+         right: 0
+         bottom: 37px
+         padding: 0 20px
+         text-align: center
+         color: $color-2
+      &-name
+         font-size: 15px
+         line-height: 25px
+         font-weight: 700
+         text-transform: uppercase
+         letter-spacing: 0.9px
+      &-brand
+         font-weight: 300
+         font-size: 14px
+         letter-spacing: 0.84px
+   .slider-btn
+      background-color: #efefef
+      &_prev
+         left: 18px
+      &_next
+         right: 18px
+         
+.catalog-slider
+   $parent: &
+   margin-bottom: -5px
+   +md
+      padding: 0 55px
+   +sm
+      padding: 0 75px
+   +xs
+      padding: 0
+   .slick-list
+      padding: 0 10px
+      margin: 0 -17px
+      +md
+         margin: 0 -10px
+   .slider-btn
+      background-color: $color-5
+      +xs
+         margin-top: -90px
+   .slider-btn_prev
+      left: -60px
+      +md
+         left: 0
+   .slider-btn_next
+      right: -60px
+      +md
+         right: 0
+   &__item
+      padding: 30px 17px
+      +md
+         padding: 30px 10px
+      #{$parent}_mod &
+         padding: 10px 17px

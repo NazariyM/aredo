@@ -1,0 +1,90 @@
+//- btn
+mixin btn(text, classMod)
+	+b.A.btn(class= classMod href='#!')&attributes(attributes)= text
+
+//- product-item
+mixin product-item(img, title, brand, price, priceOld)
+	+b.A.product-item(href='#!')&attributes(attributes)
+		+e.DIV.img-wrap
+			+e.IMG(src=`img/products/${img}.jpg` alt='image')
+		+e.DIV.content
+			+e.content-inner
+				+e.DIV.descr
+					+e.H6.title= title
+					+e.brand= brand
+				+e.DIV.price-wrap
+					+e.price цена:
+						span= price
+						i р
+					if (priceOld)
+						+e.price._old
+							span= priceOld
+							i р
+
+//- breadcrumbs
+mixin breadcrumbs(...itemText)
+	+b.breadcrumbs&attributes(attributes)
+		ul
+			each text, i in itemText
+				li(class= i === itemText.length -1 ? 'is-active' : ''): a(href='#!')= text
+
+//- pagination
+mixin pagination(classMod)
+	+b.pagination(class= classMod || '_default')
+		ul
+			li
+				a(href='#!'): +i('arr-l')
+			li.is-active
+				a(href='#!') 1
+			li
+				a(href='#!') 2
+			li
+				a(href='#!') 3
+			li
+				a(href='#!') 4
+			li
+				a(href='#!') 5
+			li
+				a(href='#!') ...
+			li
+				a(href='#!') 7
+			li
+				a(href='#!') 8
+			li
+				a(href='#!') 9
+			li
+				a(href='#!'): +i('arr-r')
+
+		+e.A.all-link(href='#!') показать все
+
+//- arrow-link
+mixin arrow-link(text, classMod)
+	+b.A.arrow-link(class= classMod || '' href='#!')
+		span= text
+		if classMod === '_white'
+			svg(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='20' height='8' viewbox='0 0 20 8')
+				defs
+					path#x6lma(d='M1094 1365v-2h14v2z')
+					path#x6lmb(d='M1108 1367.99v-8l6.01 4z')
+				g
+					g(transform='translate(-1094 -1360)')
+						use(fill='#fff' xlink:href='#x6lma')
+					g(transform='translate(-1094 -1360)')
+						use(fill='#fff' xlink:href='#x6lmb')
+		if classMod === '_black'
+			svg(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='20' height='8' viewbox='0 0 20 8')
+				defs
+					path#xgk3a(d='M896 905v-2h14v2z')
+					path#xgk3b(d='M910 907.99v-8l6.01 4z')
+				g
+					g(transform='translate(-896 -900)')
+						use(fill='#000' xlink:href='#xgk3a')
+					g(transform='translate(-896 -900)')
+						use(fill='#000' xlink:href='#xgk3b')
+
+//- socials
+mixin socials(classMod, ...socList)
+	+b.socials(class= classMod)
+		each socIcon in socList
+			+e.A(href='#!' target='_blank')
+				+i(socIcon)

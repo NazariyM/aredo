@@ -1,0 +1,129 @@
+extends layouts/_layout
+
+block variables
+	-title = 'Каталог'
+
+block content
+
+	+b.main
+
+		//begin product
+		+b.SECTION.product
+			+e.container.container
+				+e.quality-labels.quality-labels._dark
+				+breadcrumbs('Главная', 'Каталог', 'Мебель для ресторанов', 'Кресла', 'Кресло для ресторана Berol')(class='product__breadcrumbs')
+				.row.js-product-view
+					+e.col.col
+						+e.nav.slider
+							+e.nav-item
+								+e.IMG(src='img/content/product-img-sm_1.jpg' alt='image')
+							+e.nav-item
+								+e.IMG(src='img/content/product-img-sm_2.jpg' alt='image')
+							+e.nav-item
+								+e.IMG(src='img/content/product-img-sm_3.jpg' alt='image')
+
+						+e.view.slider
+							+e.view-item
+								+e.IMG(src='img/content/product-img-lg_1.jpg' alt='image')
+							+e.view-item
+								+e.IMG(src='img/content/product-img-lg_1.jpg' alt='image')
+							+e.view-item
+								+e.IMG(src='img/content/product-img-lg_1.jpg' alt='image')
+						+e.labels
+							+e.label._1
+								+e.label-icon
+								span экологичные материалы
+							+e.label._2
+								+e.label-icon
+								span эксклюзивная модель
+							+e.label._3
+								+e.label-icon
+								span сектор
+									br
+									| Horeca PRO
+							+e.label._4
+								+e.label-icon
+								span 3 d модель
+							+e.label._5
+								+e.label-icon
+								span высокопрочный каркас
+							+e.label._6
+								+e.label-icon
+								span удобная мягкая посадка
+							+e.label._7
+								+e.label-icon
+								span размеры на заказ
+
+					+e.col.col
+						+e.data
+							+e.H1.title.title Кресло для ресторана Berol
+							+e.price
+								span 26 500
+								= ' '
+								| р
+							+e.actions
+								+btn('запросить', '_orange product__actions-btn')
+
+						+e.info
+							+e.info-row
+								+e.info-title Бренд:
+								+e.info-descr AredoGroup
+							+e.info-row
+								+e.info-title Срок поставки:
+								+e.info-descr 3-4 недели
+							+e.info-row
+								+e.info-title Мин.партия:
+								+e.info-descr 10 шт.
+							+e.info-row
+								+e.info-title Материалы:
+								+e.info-descr массив дерева, металл, пластик
+							+e.info-row
+								+e.info-title Размеры:
+								+e.info-descr 550*559*1299
+
+						+e.P.descr Каркас кресла для ресторанов: Массив бука, фанера,брус. Наполнение: высокоэластичный ФППУ повышенной комфортности, резинотканевые ремни.
+		//end product
+
+		//begin teaser
+		+b.SECTION.teaser
+			+e.container.container
+				+e.row.row
+					+e.col.col
+						+e.item
+							+e.item-img(style='background-image: url(img/content/teaser-img_1.jpg)')
+							+e.item-text
+								+e.H6.item-title Галерея материалов
+								+arrow-link('КАТАЛОГ', '_white')
+						+e.item
+							+e.item-img(style='background-image: url(img/content/teaser-img_2.jpg)')
+							+e.item-text
+								+e.H6.item-title Галерея материалов
+								+arrow-link('КАТАЛОГ', '_white')
+
+					+e.col.col
+						+e.H2.title.title Выбор материалов для обивки и отделки мебели
+						+e.P.descr Для улучшения сервиса нашей компанией добавлен этот раздел.У вас есть возможность на фотографиях рассмотреть образцы дерева,массивы дерева и породы дерева.Вы можете заказать стол,стул,стеллаж,кровать,скамейку, кресло, столешницу,ящик,диван и другую мебель из пород дерева которые имеются в каталоге.
+				+e.products
+					+e.H3.products-title.title-decor Похожие товары
+					+b.catalog-slider._mod.slider
+						+e.item
+							+product-item('pop-model_1', 'Кресло для бара', 'FARANDOM', '26 500')(class='_mod')
+						+e.item
+							+product-item('pop-model_2', 'Кресло для бара', 'FUSANDA', '26 500')(class='_mod')
+						+e.item
+							+product-item('pop-model_3', 'Кресло для бара', 'GALORIYA', '26 500', '16 200')(class='_mod')
+						+e.item
+							+product-item('pop-model_4', 'Кресло для бара', 'FROZA', '26 500', '16 200')(class='_mod')
+						+e.item
+							+product-item('pop-model_1', 'Кресло для бара', 'FARANDOM', '26 500')(class='_mod')
+						+e.item
+							+product-item('pop-model_1', 'Кресло для бара', 'FARANDOM', '26 500')(class='_mod')
+						+e.item
+							+product-item('pop-model_2', 'Кресло для бара', 'FUSANDA', '26 500')(class='_mod')
+						+e.item
+							+product-item('pop-model_3', 'Кресло для бара', 'GALORIYA', '26 500', '16 200')(class='_mod')
+						+e.item
+							+product-item('pop-model_4', 'Кресло для бара', 'FROZA', '26 500', '16 200')(class='_mod')
+						+e.item
+							+product-item('pop-model_1', 'Кресло для бара', 'FARANDOM', '26 500')(class='_mod')
+		//end teaser

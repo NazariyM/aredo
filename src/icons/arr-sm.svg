@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="8"
+     viewBox="0 0 20 8">
+    <defs>
+        <path id="xgk3a" d="M896 905v-2h14v2z"/>
+        <path id="xgk3b" d="M910 907.99v-8l6.01 4z"/>
+    </defs>
+    <g>
+        <g transform="translate(-896 -900)">
+            <use fill="#000" xlink:href="#xgk3a"/>
+        </g>
+        <g transform="translate(-896 -900)">
+            <use fill="#000" xlink:href="#xgk3b"/>
+        </g>
+    </g>
+</svg>

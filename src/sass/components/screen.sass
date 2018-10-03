@@ -1,0 +1,225 @@
+.screen
+   $parent: &
+   position: relative
+   &_home
+      height: 545px
+      padding: 25px 0 0
+      border-top: 1px solid $color-11
+      +sm
+         height: auto
+      +xs
+         padding: 0
+         margin: 0 -15px
+   &_default
+      height: 519px
+      +cover
+      +vertical
+      +xs
+         display: flex
+         align-items: center
+         justify-content: center
+         height: calc(100vh - 60px)
+      +mob-fix
+         height: 150vh
+   &_video
+      height: 544px
+      +vertical
+      overflow: hidden
+      +sm
+         height: 400px
+      +xs
+         margin-top: 60px
+         height: 210px
+      &.is-active .quality-labels
+         opacity: 0
+         pointer-events: none
+      .quality-labels
+         transition: .3s ease-in-out
+   &__sliders
+      &-container
+         position: relative
+         max-width: 1920px
+         padding: 0 14px
+   &__quality-labels
+      top: 30px
+      right: 100px
+      +sm
+         right: 30px
+      +xs
+         top: 20px
+         right: 30px
+   &__inner
+      position: relative
+      z-index: 2
+      top: -8px
+      display: inline-block
+      vertical-align: middle
+      max-width: 660px
+      margin: 0 auto
+      padding: 0 15px
+      text-align: center
+      transition: .3s ease
+      &.is-hide
+         opacity: 0
+         pointer-events: none
+         visibility: hidden
+         transform: translateY(50px)
+         ~ .soc-sidebar
+            opacity: 0
+            transform: translateX(100%)
+      #{$parent}_white &
+         color: $white
+   &__title
+      margin-bottom: 15px
+      font-size: 45px
+      font-weight: 500
+      line-height: 50px
+      letter-spacing: 2.7px
+      +xs
+         font-size: 36px
+         letter-spacing: 1.3px
+         font-weight: 500
+         line-height: 40px
+   &__video-title
+      line-height: 43px
+      letter-spacing: 2.1px
+   &__sub-title
+      margin-bottom: 25px
+      font-size: 18px
+      font-weight: 300
+      letter-spacing: 1.08px
+      line-height: 23px
+   &__slider
+      display: none
+      &.slick-initialized
+         display: block
+      &-wrap
+         position: absolute
+         top: 0
+         right: 50%
+         margin-right: -187px
+         max-width: 1147px
+         +md
+            position: static
+            top: auto
+            right: auto
+            margin-right: 0
+            max-width: none
+      &-item
+         &-inner
+            height: 519px
+            position: relative
+            +vertical
+            text-align: right
+            +md
+               text-align: left
+            +sm
+               display: flex
+               align-items: center
+               height: 400px
+            +xs
+               height: calc(100vh - 60px)
+      &-img
+         position: absolute
+         top: 0
+         left: 0
+         width: 100%
+         height: 100%
+         +cover
+      &-content
+         position: relative
+         z-index: 1
+         max-width: 600px
+         display: inline-block
+         vertical-align: middle
+         margin: 50px 172px 0 0
+         color: $white
+         text-align: left
+         +md
+            max-width: 630px
+            padding: 0 15px
+         +sm
+            margin: 0
+      &-title
+         margin-bottom: 20px
+         font-size: 45px
+         line-height: 53px
+         font-weight: 700
+         text-transform: uppercase
+         letter-spacing: 2.28px
+         +xs
+            margin-bottom: 10px
+            font-size: 26px
+            line-height: 32px
+      &-descr
+         margin-bottom: 30px
+         font-size: 18px
+         line-height: 24px
+         letter-spacing: 1.35px
+         +xs
+            margin-bottom: 20px
+      &-btn
+      &-label
+         position: absolute
+         top: 28px
+         right: 28px
+         z-index: 1
+         +sprite('rus-made_label')
+         +md
+            right: 88px
+         +sm
+            top: 15px
+            right: 15px
+         +xs
+            +sr('rus-made_label')
+      
+      .slider-dots
+         position: absolute
+         right: 42px
+         bottom: 44px
+         z-index: 1
+         +md
+            right: 100px
+         +sm
+            right: 30px
+            bottom: 30px
+         +xs
+            right: 15px
+            bottom: 15px
+   &__prod-slider
+      float: right
+      width: 370px
+      +md
+         display: none!important
+      +xs
+         display: block!important
+         float: none
+         margin: 30px auto 0
+         width: 100%
+      &-container
+         +xs
+            padding: 0
+   &__play-btn
+      cursor: pointer
+      &:hover
+         .icon
+            fill: $color-7
+         + .screen__video-title
+            color: $color-7
+      &-icon
+         fill: $white
+         width: 50px
+         height: 50px
+         transition: .3s ease
+   &__video
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: 1
+      width: 100%
+      height: 100%
+      +cover-video
+      &-title
+         transition: .3s ease

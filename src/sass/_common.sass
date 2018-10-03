@@ -1,0 +1,179 @@
+body
+   min-width: 320px
+   -webkit-font-smoothing: antialiased
+   -moz-osx-font-smoothing: grayscale
+   +roboto
+   +f(15, 300, 27)
+   letter-spacing: 0.3px
+   color: $color-1
+   &.is-locked
+      position: fixed
+      top: 0
+      left: 0
+      right: 0
+      height: 0
+      overflow: hidden
+
+.out
+   overflow: hidden
+   
+.container
+   max-width: 1200px
+   margin: 0 auto
+   padding: 0 15px
+   
+.row
+   margin: 0 -15px
+   +clr
+   +sm
+      margin: 0 -10px
+
+.col
+   float: left
+   padding: 0 15px
+   +sm
+      padding: 0 10px
+   &-xs
+      width: 16.66667%
+      &:nth-child(6) ~ &
+         padding: 30px 15px 0
+         +md
+            padding: 10px 10px 0
+   &-sm
+      width: 25%
+      &:nth-child(4) ~ &
+         padding: 30px 15px 0
+   &-md
+      width: 33.33333%
+      +xs
+         width: 100%
+      &:nth-child(1) ~ &
+         +xs
+            padding: 15px 10px 0
+      &:nth-child(3) ~ &
+         padding: 30px 15px 0
+         +sm
+            padding: 20px 10px 0
+   &-lg
+      width: 50%
+      +sm
+         width: 100%
+      &:nth-child(2) ~ &
+         padding: 30px 15px 0
+         
+.section
+   padding: 78px 0
+   +sm
+      padding: 65px 0
+   +xs
+      padding: 50px 0
+   & + &
+      padding-top: 0
+
+.first-section
+   padding-top: 120px
+   +sm
+      padding-top: 20px
+   +xs
+      padding-top: 30px
+
+.main
+   overflow: hidden
+
+.title
+   +f(35, 700, 40)
+   +xs
+      font-size: 24px
+      line-height: 27px
+
+.title-decor
+   position: relative
+   padding-left: 71px
+   color: $color-1
+   +f(20, 500, 24)
+   letter-spacing: 1.2px
+   &::before
+      position: absolute
+      top: 50%
+      left: 2px
+      margin-top: -2px
+      width: 46px
+      height: 4px
+      background-color: $color-1
+      content: ''
+
+.btn
+   display: inline-block
+   min-width: 143px
+   padding: 4px 15px
+   background-color: transparent
+   +roboto
+   text-align: center
+   text-transform: uppercase
+   font-size: 13px
+   line-height: 28px
+   font-weight: 500
+   letter-spacing: 2.34px
+   border: 4px solid
+   transition: all .3s ease-in-out
+   &:hover
+      color: $white
+   &_white
+      color: $white
+      border-color: $white
+      &:hover
+         background: $white
+         border-color: $white
+         color: $black
+   &_black
+      color: $black
+      border-color: $black
+      &:hover
+         background: $black
+         border-color: $black
+   &_orange
+      color: $color-2
+      background-color: #f2c16d
+      border-color: #f2c16d
+      &:hover
+         color: $white
+         background-color: darken(#f2c16d, 20)
+         border-color: darken(#f2c16d, 20)
+
+.arrow-link
+   display: inline-block
+   vertical-align: middle
+   font-size: 0
+   &:hover
+      svg
+         transform: translateX(10px)
+   span, svg
+      display: inline-block
+      vertical-align: middle
+   span
+      margin-right: 10px
+      letter-spacing: 2.34px
+      font-size: 13px
+      font-weight: 700
+   svg
+      transition: .6s ease
+   &_black
+      span
+         color: $black
+      
+   &_white
+      span
+         color: $white
+
+.quality-labels
+   position: absolute
+   z-index: 2
+   +sprite('rus-made_label')
+   +xs
+      +sr('rus-made_label')
+      transform: scale(1.5)
+   &_dark
+      +sprite('rus-made_label_dark')
+      +xs
+         +sr('rus-made_label_dark')
+         transform: scale(1.5)

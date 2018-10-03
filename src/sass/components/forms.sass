@@ -1,0 +1,205 @@
+@import ../helpers/all
+
+.check-box
+   $parent: &
+   position: relative
+   label
+      display: inline-flex
+      align-items: center
+      color: $black
+      +roboto
+      cursor: pointer
+   &__square
+      position: relative
+      width: 14px
+      height: 14px
+      border-radius: 2px
+      margin-right: 15px
+      border: 1px solid #dbe1e6
+      background-color: #f2f5f7
+      font-size: 0
+   &__icon
+      opacity: 0
+      transform: scale(.6)
+      position: absolute
+      top: 1px
+      right: 1px
+      width: 9px
+      height: 9px
+      transition: .3s ease-in-out
+      fill: $color-1
+   input
+      display: none
+      &:checked ~ label #{$parent}__icon
+         opacity: 1
+         transform: scale(1)
+
+.form-field
+   position: relative
+   &__input
+      width: 100%
+      height: 54px
+      padding: 0 24px
+      +roboto
+      font-size: 13px
+      font-weight: 300
+      line-height: 54px
+      letter-spacing: 0.78px
+      border: 3px solid $color-1
+      background-color: transparent
+      color: $color-2
+      +placeholder-color($color-1)
+      outline: 2px solid
+      outline-offset: -4px
+      transition: all .7s cubic-bezier(.19,1,.22,1)
+      &:focus
+         outline-color: rgba(255,255,255,0)
+         outline-offset: 12px
+   &__submit
+      display: none
+      &-btn
+         position: absolute
+         top: 3px
+         right: 3px
+         bottom: 3px
+         width: 80px
+         cursor: pointer
+         .icon
+            position: absolute
+            top: 50%
+            left: 50%
+            margin-left: -21px
+            margin-top: -4px
+            width: 42px
+            height: 7px
+            transition: .3s ease
+   &_has-submit &__input
+      padding: 0 80px 0 24px
+
+.textarea
+   display: block
+   width: 100%
+   height: 130px
+   padding: 20px 24px
+   +roboto
+   font-size: 13px
+   font-weight: 300
+   line-height: 18px
+   letter-spacing: 0.78px
+   border: 3px solid $color-1
+   background-color: transparent
+   color: $color-2
+   +placeholder-color($color-1)
+   outline: 2px solid
+   outline-offset: -4px
+   transition: all .7s cubic-bezier(.19,1,.22,1)
+   resize: none
+   &:focus
+      outline-color: rgba(255,255,255,0)
+      outline-offset: 12px
+
+.form-upload
+   $parent: &
+   margin: 0 -5px
+   padding: 20px 0 0
+   text-align: center
+   line-height: 16px
+   
+   &__title
+      position: relative
+      margin-bottom: 20px
+      padding-bottom: 20px
+      font-size: 20px
+      line-height: 30px
+      font-weight: 400
+      &::after
+         position: absolute
+         bottom: 0
+         left: 5px
+         right: 5px
+         border-bottom: 1px solid rgba(#959595, .4)
+         content: ''
+   &__actions
+      +inlineContainer
+      &-item
+         display: inline-block
+         vertical-align: top
+         width: calc(33.33333% - 10px)
+         margin: 0 5px
+         +xs
+            width: 100%
+         &:not(:last-child)
+            +xs
+               margin-bottom: 5px
+         &-inner
+            position: relative
+            padding: 10px 5px
+            border: 1px solid #959595
+            font-size: 11px
+         
+   &__btn
+      display: block
+      cursor: pointer
+      margin: 0 0 10px
+      &-text
+         display: block
+         margin: 3px 0 0
+         font-size: 12px
+         +trs
+         #{$parent}__btn:hover &
+            color: #f2c16d
+      &-hint
+         color: #959595
+      &-icon
+         width: 30px
+         height: 30px
+         fill: $color-7
+         +trs
+         #{$parent}__btn:hover &
+            fill: #f2c16d
+   &__success
+      opacity: 0
+      transform: scale(.7)
+      pointer-events: none
+      +coverdiv
+      padding: 26px 0 0
+      z-index: 1
+      background: $white
+      transition: .4s ease-in-out
+      .is-active &
+         opacity: 1
+         transform: scale(1)
+   
+      &-text
+         margin-top: 5px
+         font-size: 12px
+      &-icon
+         width: 35px
+         height: 35px
+         fill: #0ac10a
+   &__remove
+      opacity: 0
+      transform: scale(.7)
+      pointer-events: none
+      +coverdiv
+      z-index: 2
+      background: $white
+      transition: .4s ease-in-out
+      #{$parent}__actions-item.is-active:hover &
+         opacity: 1
+         transform: scale(1)
+         pointer-events: auto
+      &-btn
+         position: absolute
+         top: 50%
+         left: 50%
+         transform: translate3d(-50%, -50%, 0)
+         span
+            display: block
+            margin-top: 5px
+      &-icon
+         fill: $color-2
+         width: 30px
+         height: 30px
+   &__input
+      display: none

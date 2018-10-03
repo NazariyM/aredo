@@ -1,0 +1,78 @@
+extends layouts/_layout
+
+block variables
+	-title = 'Контакты'
+
+block content
+
+	+b.main
+
+		//begin contact
+		+b.SECTION.contact
+			+e.container.container
+				+e.row.row
+					+e.addr-col
+						+breadcrumbs('Главная', 'Контакты')(class='contact__breadcrumbs')
+						+e.H2.title.title Наши адреса
+						+e.addr
+							+e.addr-item.is-active(data-lat='54.249949' data-lng='37.605692' onclick='')
+								+e.H4.addr-title Производство
+								+e.ADDRESS.addr-street г. Тула,  ул. Большая, д. 11
+								+i('location', 'contact__addr-icon')
+
+							+e.addr-item(data-lat='54.209601' data-lng='37.645685' onclick='')
+								+e.H4.addr-title Выставочный зал
+								+e.ADDRESS.addr-street г. Тула,  Веневское шоссе, 4к6
+								+i('location', 'contact__addr-icon')
+
+							+e.addr-item(data-lat='55.684816' data-lng='37.621879' onclick='')
+								+e.H4.addr-title Офис
+								+e.ADDRESS.addr-street г. Москва, Варшавское шоссе,
+									br
+									| 26 оф 403
+								+i('location', 'contact__addr-icon')
+
+					+e.map-col
+						+e.map-wrap
+							+e.map(data-zoom='17')
+		//end contact
+
+		//begin info
+		+b.SECTION.info.section
+			+e.container.container
+				.row
+					+e.col.col
+						+e.item
+							+e.H2.item-title.title Вопросы общего плана
+							+e.P.item-descr Ждем ваших запросов и предложений на нашу общую почту -
+								+e.A.item-link(href='mailto:info@aredogroup.ru') info@aredogroup.ru
+						+e.item
+							+e.H2.item-title.title В ряды AredoGroup
+							+e.P.item-descr Если вы талантливый и грамотный специалист в области дизайна и производства мебели, декора, комплектации крупных общественных объектов  - ждем ваших резюме и партнерских предложений на эту почту -
+								+e.A.item-link(href='mailto:job@aredogroup.ru') job@aredogroup.ru
+						+socials('info__socials', 'vk', 'fb', 'tw', 'gp')
+					+e.col.col
+						+e.item
+							+e.H2.item-title.title Еще больше о нашей мебели
+							+e.P.item-descr Уточнить стоимость, параметры и условия заказа мебели на нашем	 производстве,  Вы можете, написав свой запрос на эту почту -
+								+e.A.item-link(href='mailto:sales@aredogroup.ru') sales@aredogroup.ru
+						+e.item._align
+							+e.H2.item-title.title Обратная связь
+							+e.P.item-descr Отправьте нам заявку и мы перезвоним вам
+								+e.FORM.form(action='#!' method='POST')
+									+b.form-field.info__form-field
+										+e.INPUT.input(type='text' name='tel' placeholder='Телефон' required)
+									+b.form-field._has-submit.info__form-field
+										+e.INPUT.input(type='text' name='email' placeholder='Имя' required)
+										+e.LABEL.submit-btn
+											+e.INPUT.submit(type='submit')
+											+i('arr-r-long')
+
+				+e.pics.row
+					.col.col-md
+						+e.pics-img(style='background-image: url(img/content/info-img_1.jpg)')
+					.col.col-md
+						+e.pics-img(style='background-image: url(img/content/info-img_2.jpg)')
+					.col.col-md
+						+e.pics-img(style='background-image: url(img/content/info-img_3.jpg)')
+		//end info

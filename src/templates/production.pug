@@ -1,0 +1,87 @@
+extends layouts/_layout
+
+block variables
+	-title = 'Производство'
+
+block content
+
+	+b.main
+
+		//begin screen
+		+b.SECTION.screen._video._white.video-block
+			+e.quality-labels.quality-labels
+			+e.inner
+				+e.BUTTON.play-btn(type='button'): +i('play-icon', 'screen__play-btn-icon')
+				+e.H2.video-title.title Обзор производства
+
+			+e.VIDEO.video(playsinline="playsinline" loop="loop" preload="auto" poster="img/bg/screen_video-poster.jpg")
+				source(src="data/video-sample.mp4" type="video/mp4")
+			+b.soc-sidebar
+				+e.list
+					+e.A.link(href='#!')
+						+i('vk')
+					+e.A.link(href='#!')
+						+i('fb')
+					+e.A.link(href='#!')
+						+i('inst')
+					+e.A.link(href='#!')
+						+i('od')
+					+e.A.link(href='#!')
+						+i('at')
+				+e.P.title Мы в социальных сетях
+		//end screen
+
+		//begin production
+		+b.SECTION.production
+			+e.text
+				.container
+					+breadcrumbs('Главная', 'Производство')
+					+e.H2.title.title Мебельная фабрика AredoGroup
+					+e.P.descr ИКЕА, в бытовой речи часто произносят как икéя) — нидерландская производственно-торговая группа компаний (имеет шведские корни) владелец одной из крупнейших в мире торговых сетей по продаже мебели и товаров для дома. Полное наименование — IKEA International Group. Штаб-квартира — в городе Делфте, провинция Южная Голландия.Ингвар Кампрад начал торговать, когда ему исполнилось 5 лет, он покупал спички оптом в Стокгольме и продавал их всвоей небольшой деревне в розницу. Первым покупателем стала его бабушка.
+			+e.block.section
+				.container
+					+e.H3.block-title.title-decor Производственные цеха
+					+e.row.row
+						+e.col.col.col-lg
+							+e.item._img-left
+								+e.item-img-wrap
+									+e.IMG(src='img/content/production_1.jpg' alt='image')
+								+e.item-text
+									+e.H4.item-title Столярный цех
+									+e.P.item-descr ИКЕА, в бытовой речи часто произносят как икéя) — нидерландская производственно-торговая группа компаний (имеет шведские корни) владелец одной из крупнейших в мире торговых сетей по продаже мебели и товаров
+						+e.col.col.col-lg
+							+e.item._img-left
+								+e.item-img-wrap
+									+e.IMG(src='img/content/production_1.jpg' alt='image')
+								+e.item-text
+									+e.H4.item-title Мягкий цех
+									+e.P.item-descr ИКЕА, в бытовой речи часто произносят как икéя) — нидерландская производственно-торговая группа компаний (имеет шведские корни) владелец одной из крупнейших в мире торговых сетей по продаже мебели и товаров
+						+e.col.col.col-lg
+							+e.item._img-right
+								+e.item-text
+									+e.H4.item-title Металлообработка
+									+e.P.item-descr ИКЕА, в бытовой речи часто произносят как икéя) — нидерландская производственно-торговая группа компаний (имеет шведские корни) владелец одной из крупнейших в мире торговых сетей по продаже мебели и товаров
+								+e.item-img-wrap
+									+e.IMG(src='img/content/production_1.jpg' alt='image')
+						+e.col.col.col-lg
+							+e.item._img-right
+								+e.item-text
+									+e.H4.item-title Швейный цех
+									+e.P.item-descr ИКЕА, в бытовой речи часто произносят как икéя) — нидерландская производственно-торговая группа компаний (имеет шведские корни) владелец одной из крупнейших в мире торговых сетей по продаже мебели и товаров
+								+e.item-img-wrap
+									+e.IMG(src='img/content/production_1.jpg' alt='image')
+		//end production
+
+		//begin promo
+		+b.SECTION.promo
+			+e.container.container
+				+e.inner
+					+e.text
+						+e.H2.title.title Шоу-рум AredoGroup
+						+e.P.descr Эксклюзивная мебель от креативных дизайнеров сделает неповторимым интерьер любогопомещения. Она поможет создать комфортные условия в помещении и выразить индивидуальность его хозяина. Мы напрямую сотрудничаем с фабриками и мастерскими
+					+e.img(style='background-image: url(img/content/promo_img.png)')
+		//end promo
+
+		//begin banner
+		+b.banner(style='background-image: url(img/content/banner_img.jpg)')
+		//end banner

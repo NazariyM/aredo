@@ -1,0 +1,91 @@
+extends layouts/_layout
+
+block variables
+	-title = 'Каталог'
+
+block content
+
+	+b.main
+
+		//begin screen
+		+b.SECTION.screen._default._white(style='background-image: url(img/bg/screen_material-bg.jpg)')
+			+e.quality-labels.quality-labels
+			+e.inner
+				+e.H2.title Материал для обивки мебели
+				+e.P.sub-title Более 50 видов качественной ткани
+				+btn('смотреть', '_white next-section-btn')
+			+b.soc-sidebar
+				+e.list
+					+e.A.link(href='#!')
+						+i('vk')
+					+e.A.link(href='#!')
+						+i('fb')
+					+e.A.link(href='#!')
+						+i('inst')
+					+e.A.link(href='#!')
+						+i('od')
+					+e.A.link(href='#!')
+						+i('at')
+				+e.P.title Мы в социальных сетях
+		//end screen
+
+		//begin catalog
+		+b.SECTION.catalog
+			.container
+				+breadcrumbs('Главная', 'Каталог', 'Мебель для ресторанов', 'Кресла')
+				+e.H2.title.title-decor Кресла
+				.row
+					-i = 0
+					while i < 3
+						+e.col.col.col-sm
+							+product-item('pop-model_1', 'Кресло для бара', 'FARANDOM', '26 500')
+						+e.col.col.col-sm
+							+product-item('pop-model_2', 'Кресло для бара', 'FUSANDA', '26 500')
+						+e.col.col.col-sm
+							+product-item('pop-model_3', 'Кресло для бара', 'GALORIYA', '26 500', '16 200')
+						+e.col.col.col-sm
+							+product-item('pop-model_4', 'Кресло для бара', 'FROZA', '26 500', '16 200')
+						-i++
+				+pagination('_catalog')
+			+b.BUTTON.request-btn(data-popup-target='calc-popup' type='button')
+		//begin catalog
+
+		//begin suggested-prods
+		+b.suggested-prods.section
+			+e.container.container
+				+e.H3.title.title-decor Популярные товары
+				+b.catalog-slider._mod.slider
+					+e.item
+						+product-item('pop-model_1', 'Кресло для бара', 'FARANDOM', '26 500')(class='_mod')
+					+e.item
+						+product-item('pop-model_2', 'Кресло для бара', 'FUSANDA', '26 500')(class='_mod')
+					+e.item
+						+product-item('pop-model_3', 'Кресло для бара', 'GALORIYA', '26 500', '16 200')(class='_mod')
+					+e.item
+						+product-item('pop-model_4', 'Кресло для бара', 'FROZA', '26 500', '16 200')(class='_mod')
+					+e.item
+						+product-item('pop-model_1', 'Кресло для бара', 'FARANDOM', '26 500')(class='_mod')
+					+e.item
+						+product-item('pop-model_1', 'Кресло для бара', 'FARANDOM', '26 500')(class='_mod')
+					+e.item
+						+product-item('pop-model_2', 'Кресло для бара', 'FUSANDA', '26 500')(class='_mod')
+					+e.item
+						+product-item('pop-model_3', 'Кресло для бара', 'GALORIYA', '26 500', '16 200')(class='_mod')
+					+e.item
+						+product-item('pop-model_4', 'Кресло для бара', 'FROZA', '26 500', '16 200')(class='_mod')
+					+e.item
+						+product-item('pop-model_1', 'Кресло для бара', 'FARANDOM', '26 500')(class='_mod')
+		//end suggested-prods
+
+		//begin how-text
+		+b.SECTION.how-text.section
+			+e.container.container
+				+e.H2.title.title Как выбрать для рестрона?
+				+e.P Как и весь мировой прогресс, наша фабрика не стоит на месте, постоянно совершенствуя уже отлаженный за годы работы механизм производства мебели. Особое внимание уделяется мировым тенденциям и направлениям в мебельной индустрии. Уже сейчас мы предлагаем нашим клиентам широчайший выбор ткани для обивки мягкой мебели, и этот ассортимент постоянно пополняется. Естественно, усиливается и контроль качества материалов производимой продукции, что обеспечивает покупателям надежность и гарантию отличного выбора. Для жителей Минска, Витебска и других регионов доступен онлайн каталог мебельных тканей, который поможет удовлетворить любые Ваши нестандартные дизайнерские решения или запросы.
+		//end how-text
+
+block modals
+	//begin popups
+	+popup({ name: 'calc-popup'})
+	+popup({ name: 'thanks-popup'})
+	//end popups

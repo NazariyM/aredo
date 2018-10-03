@@ -1,0 +1,150 @@
+.contact
+   padding: 145px 0 52px
+   +sm
+      padding: 57px 0 50px
+   &__row
+      +inlineContainer
+      +justify
+   &__title
+      margin-bottom: 30px
+      letter-spacing: 2.1px
+      +md
+         margin-bottom: 15px
+      
+   &__addr-col
+      display: inline-block
+      vertical-align: middle
+      width: 430px
+      padding: 0 15px
+      text-align: left
+      text-align-last: left
+      +sm
+         width: 100%
+   &__map-col
+      display: inline-block
+      vertical-align: middle
+      width: calc(100% - 500px)
+      padding: 0 15px
+      text-align: center
+      text-align-last: center
+      +md
+         width: calc(100% - 430px)
+      +sm
+         width: 100%
+   
+   &__breadcrumbs
+      padding: 0
+      margin-bottom: 35px
+      +md
+         margin-bottom: 15px
+      
+   &__addr
+      &-item
+         position: relative
+         padding: 16px 40px 21px 0
+         cursor: pointer
+         font-size: 20px
+         letter-spacing: 1.2px
+         &:not(:last-child)
+            border-bottom: 1px solid $color-3
+      &-title
+         margin-bottom: 4px
+         color: $color-1
+         line-height: 34px
+         font-weight: 700
+         +xs
+            font-size: 18px
+      &-street
+         font-style: normal
+         line-height: 29px
+         letter-spacing: 1.5px
+         +xs
+            letter-spacing: 0.3px
+            font-size: 16px
+      &-icon
+         position: absolute
+         top: 46px
+         right: 7px
+         font-size: 26px
+         transition: .3s ease
+         .is-active &
+            fill: #dadada
+   
+   &__map-wrap
+      position: relative
+      +ratio(675, 452)
+   &__map
+      +coverdiv
+      .gmnoprint, .gm-style-cc
+         display: none !important
+         
+.info
+   &__col
+      &:not(:first-child)
+         +sm
+            margin-top: 30px
+      &:nth-child(1)
+         width: percentage(500 / 1200)
+         +sm
+            width: 100%
+      &:nth-child(2)
+         width: percentage(700 / 1200)
+         padding: 0 80px
+         +md
+            padding: 0 60px
+         +sm
+            width: 100%
+            padding: 0 15px
+   &__item
+      &:not(:first-child)
+         margin-top: 65px
+         +sm
+            margin-top: 30px
+      &_align
+         margin-top: 35px!important
+         +sm
+            margin-top: 30px!important
+      &-title
+         margin-bottom: 19px
+         letter-spacing: 2.1px
+         +md
+            margin-bottom: 10px
+      &-descr
+         line-height: 28px
+         color: #373636
+      &-link
+         font-weight: 700
+         text-transform: uppercase
+         +trs
+         &:hover
+            opacity: .5
+   &__form
+      margin-top: 25px
+      font-size: 0
+      line-height: 0
+      &-field
+         display: inline-block
+         vertical-align: middle
+         &:not(:first-child)
+            +xs
+               margin-top: 5px
+         &:nth-child(1)
+            width: 182px
+            margin-right: 13px
+            +xs
+               width: 100%
+         &:nth-child(2)
+            width: 264px
+            +xs
+               width: 100%
+   &__socials
+      margin-top: 50px
+      +sm
+         margin-top: 20px
+   &__pics
+      padding-top: 78px
+      +sm
+         padding-top: 58px
+      &-img
+         +cover
+         +ratio(370, 368)

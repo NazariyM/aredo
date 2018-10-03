@@ -1,0 +1,60 @@
+extends layouts/_layout
+
+block variables
+	-title = 'Статьи'
+
+block content
+
+	+b.main
+
+		//begin screen
+		+b.SECTION.screen._default._black(style='background-image: url(img/bg/articles_bg.jpg)')
+			+e.quality-labels.quality-labels._dark
+			+e.inner
+				+e.H2.title Современный дизайн в стиле Loft
+				+e.P.sub-title Лучшие модели мебели от мебельной  фабрики AredoGroup
+				+btn('смотреть', '_black')
+			+b.soc-sidebar
+				+e.list
+					+e.A.link(href='#!')
+						+i('vk')
+					+e.A.link(href='#!')
+						+i('fb')
+					+e.A.link(href='#!')
+						+i('inst')
+					+e.A.link(href='#!')
+						+i('od')
+					+e.A.link(href='#!')
+						+i('at')
+				+e.P.title Мы в социальных сетях
+		//end screen
+
+		//begin articles
+		+b.SECTION.articles
+			.container
+				+breadcrumbs('Главная', 'Статьи', 'Компания «АредоГруп» старается соответствовать всем современным требованиям рынка')
+				.row
+					+e.col._lg.col
+						-i = 0
+						while i < 2
+							+b.ARTICLE.article.articles__item
+								+e.img(style='background-image: url(img/content/article_img-2.jpg)')
+								+e.P.date 16 НОЯБРЯ 2017
+								+e.H2.title.title Компания «АредоГруп» старается соответствовать всем современным требованиям рынка
+								+e.P.descr Качеству товаров и услуг. И в каждом из вышеуказанных заведений  в создании комфортной и неповторимой обстановки принимают участие два основных критерия – это интерьер и, конечно же, удобная, оригинальная  и качественная  мебель.
+								+btn('ПОДРОБНЕЕ', '_black')
+							-i++
+					+e.col._md.col
+						+b.pop-articles
+							+e.H4.title.title Популярное
+							-i = 0
+							while i < 2
+								+e.item
+									+e.A.item-link(href='#!')
+										+e.item-img-wrap
+											+e.IMG(src='img/content/pop-articles_1.jpg' alt='image')
+										+e.item-text
+											+e.H5.item-title Компания “Aredo Group” Старается соответствовать всем современым требованиям...
+											+e.P.item-date 16 НОЯБРЯ 2017
+								-i++
+		//end articles

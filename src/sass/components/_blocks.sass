@@ -1,0 +1,368 @@
+.logo
+   padding: 20px 20px 18px
+   box-shadow: 0 0 40px rgba(0, 0, 0, 0.08)
+   background-color: $white
+   text-align: center
+   +sm
+      padding: 17px 8px 5px
+   h1
+      +hide-text
+   &__link
+      display: block
+      margin: -5px 0 3px
+      img
+         width: 147px
+         height: 144px
+         +sm
+            width: 80px
+            height: 77px
+         +xs
+            width: 60px
+            height: 57px
+   &__tel
+      color: $black
+      +f(16, 700, 20)
+      letter-spacing: 0.23px
+      +trs
+      +sm
+         font-size: 14px
+      +xs
+         font-size: 13px
+      &:hover
+         color: #ffc14d
+   &__title
+      margin-bottom: 5px
+      font-size: 12px
+      line-height: 12px
+      font-weight: 400
+      +xs
+         font-size: 10px
+         margin-bottom: 0
+
+.product-item
+   $parent: &
+   position: relative
+   display: block
+   text-align: center
+   &::after
+      pointer-events: none
+      position: absolute
+      top: -8px
+      left: -8px
+      right: -8px
+      bottom: -8px
+      opacity: 0
+      box-shadow: 0 0 32px rgba(0, 0, 1, 0.09)
+      transition: .4s ease
+      content: ''
+   &:hover::after
+      opacity: 1
+   &__img-wrap
+      position: relative
+      height: 274px
+      img
+         +vcenter
+         max-width: 100%
+         max-height: 100%
+   &__content
+      min-height: 164px
+      border: 1px solid $color-3
+      #{$parent}_mod &
+         opacity: 0
+         +coverdiv
+         border: 0
+         z-index: 1
+         color: $white
+         transition: .4s ease
+         
+      &-inner
+         padding: 35px 20px 15px
+         width: 100%
+         +sm
+            padding: 35px 10px 15px
+         #{$parent}_mod &
+            +vcenter
+            padding: 15px 5px
+   &__descr
+      position: relative
+      margin-bottom: 11px
+      padding-bottom: 10px
+      &::after
+         position: absolute
+         left: 50%
+         bottom: 0
+         margin-left: -47px
+         width: 94px
+         height: 1px
+         background-color: $color-3
+         content: ''
+         #{$parent}_mod &
+            background-color: $white
+   &__title
+      margin-bottom: 2px
+      font-size: 15px
+      line-height: 20px
+      font-weight: 700
+      letter-spacing: 0.9px
+      text-transform: uppercase
+   &__brand
+      font-size: 14px
+      font-weight: 300
+      letter-spacing: 0.84px
+   &__price
+      display: inline-block
+      vertical-align: middle
+      font-size: 13px
+      font-weight: 300
+      letter-spacing: 0.78px
+      & + &
+         margin-left: 10px
+      &-wrap
+         white-space: nowrap
+         font-size: 0
+      span
+         font-size: 20px
+         font-weight: 700
+         line-height: 25px
+      i
+         font-weight: 700
+         line-height: 25px
+         font-style: normal
+      &_old
+         position: relative
+         &::after
+            position: absolute
+            top: 50%
+            left: 0
+            height: 1px
+            width: 100%
+            margin-top: -1px
+            background: $color-7
+            content: ''
+         span, i
+            font-size: 14px
+            color: $color-7
+         i
+            position: relative
+            top: -2px
+            font-size: 11px
+            color: $color-7
+   &_mod
+      &::after
+         top: -2px
+         left: -7px
+         right: -7px
+         bottom: -2px
+         box-shadow: none
+         background-color: rgba(#191919, .4)
+      &:hover #{$parent}__content
+         opacity: 1
+         
+
+.breadcrumbs
+   padding: 40px 0 22px
+   +xs
+      padding: 28px 0 15px
+   ul
+      font-size: 0
+      li
+         display: inline-block
+         vertical-align: middle
+         line-height: 22px
+         &:not(:last-child)
+            margin-right: 10px
+         &:not(:last-child)::after
+            display: inline-block
+            vertical-align: middle
+            margin-left: 8px
+            pointer-events: none
+            font-size: 15px
+            content: '/'
+         &.is-active a
+            pointer-events: none
+            color: #9d9d9d
+         a
+            display: inline-block
+            vertical-align: middle
+            font-size: 11px
+            letter-spacing: 0.66px
+            color: #252525
+            +trs
+            &:hover
+               opacity: .5
+
+.pagination
+   text-align: center
+   &_default
+      margin: 70px 0 0
+      +sm
+         margin: 50px 0 0
+   &_catalog
+      margin: 90px 0 0
+      +sm
+         margin: 60px 0 0
+      +xs
+         margin: 40px 0 0
+   ul
+      margin-bottom: 13px
+      font-size: 0
+      line-height: 0
+      li
+         display: inline-block
+         vertical-align: middle
+         position: relative
+         margin: 0 12px
+         &:first-child
+            margin-right: 17px
+         &:last-child
+            margin-left: 17px
+         +xs
+            margin: 0 7px
+         &.is-active
+            &::after
+               +vcenter
+               z-index: -1
+               width: 35px
+               height: 35px
+               margin-top: -2px
+               background-color: #ececec
+               border-radius: 50%
+               content: ''
+            a
+               pointer-events: none
+            
+         a
+            font-weight: 400
+            text-align: center
+            font-size: 16px
+            color: #181818
+            +trs
+            &:hover
+               color: rgba(#181818, .5)
+               .icon
+                  fill: rgba(#181818, .5)
+            .icon
+               vertical-align: 4px
+               font-size: 12px
+               +trs
+               
+   &__all-link
+      font-size: 13px
+      font-weight: 300
+      letter-spacing: 0.78px
+      text-transform: uppercase
+      border-bottom: 1px solid rgba($color-1, .7)
+      +trs
+      &:hover
+         border-bottom-color: transparent
+
+.how-text
+   padding-top: 78px!important
+   border-top: 1px solid #e8e8e8
+   +sm
+      padding-top: 65px !important
+   &__title
+      margin-bottom: 26px
+      font-size: 30px
+      letter-spacing: 1.8px
+      line-height: 27px
+
+.request-btn
+   position: fixed
+   top: 50%
+   z-index: 100
+   right: -100%
+   margin-top: -106px
+   transition: 1s ease-in-out
+   +sprite('request_label')
+   +r(1599)
+      transform: scale(.7)
+   +xs
+      transform: scale(1)
+      +sr('request_label')
+   &.is-active
+      right: 0
+      +r(1599)
+         right: -18px
+      +xs
+         right: -1px
+
+.socials
+   $parent: &
+   +inlineContainer
+   display: inline-block
+   padding: 11px 21px
+   background: $white
+   box-shadow: 0 0 3px rgba(0, 0, 0, 0.19)
+   a
+      display: inline-block
+      vertical-align: middle
+      line-height: 1
+      &:not(:last-child)
+         margin-right: 10px
+      
+      &:hover svg
+         opacity: .5
+   
+   svg
+      transition: .3s ease
+      font-size: 26px
+      &.icon-vk
+         font-size: 28px
+      &.icon-gp
+         font-size: 27px
+
+.soc-sidebar
+   width: 60px
+   position: absolute
+   z-index: 10
+   top: 0
+   right: 0
+   bottom: 0
+   padding: 55px 0
+   background: rgba(0, 0, 0, 0.75)
+   +vertical
+   transition: .3s ease-in-out
+   +sm
+      display: none
+   &_home
+      top: 25px
+      +md
+         right: 14px
+   &__title
+      position: relative
+      top: -40px
+      color: #fff
+      font-size: 16px
+      line-height: 18px
+      transform: rotate(-90deg)
+      font-weight: 400
+      white-space: nowrap
+   &__list
+      display: inline-block
+      vertical-align: top
+   &__link
+      display: block
+      height: 30px
+      width: 30px
+      margin: 0 auto
+      border: 1px solid $white
+      border-radius: 10px
+      transition: .3s ease-in-out
+      +vertical
+      &:not(:last-child)
+         margin-bottom: 10px
+      &:hover
+         border-color: #f9c546
+         .icon
+            fill: #f9c546
+      .icon
+         display: inline-block
+         vertical-align: middle
+         fill: $white
+         font-size: 19px
+         transition: .3s ease-in-out
+         &-fb
+            font-size: 17px
+         &-inst
+            font-size: 17px

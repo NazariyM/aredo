@@ -1,0 +1,146 @@
+extends layouts/_layout
+
+block variables
+	-title = 'Портфолио'
+
+block content
+
+	+b.main
+
+		//begin screen
+		+b.SECTION.screen._default._black(style='background-image: url(img/bg/articles_bg.jpg)')
+			+e.quality-labels.quality-labels._dark
+			+e.inner
+				+e.H2.title Современный дизайн в стиле Loft
+				+e.P.sub-title Лучшие модели мебели от мебельной  фабрики AredoGroup
+				+btn('смотреть', '_black')
+			+b.soc-sidebar
+				+e.list
+					+e.A.link(href='#!')
+						+i('vk')
+					+e.A.link(href='#!')
+						+i('fb')
+					+e.A.link(href='#!')
+						+i('inst')
+					+e.A.link(href='#!')
+						+i('od')
+					+e.A.link(href='#!')
+						+i('at')
+				+e.P.title Мы в социальных сетях
+		//end screen
+
+		//begin portfolio
+		+b.SECTION.portfolio
+			.container
+				+breadcrumbs('Главная', 'Портфолио')(class='portfolio__breadcrumbs')
+				+e.row.row.js-portfolio-view
+					+e.col.col.col-lg
+						+e.nav.slider
+							+e.nav-item
+								+e.nav-img(style='background-image: url(img/content/portfolio-img_1.jpg)')
+							+e.nav-item
+								+e.nav-img(style='background-image: url(img/content/portfolio-img_2.jpg)')
+							+e.nav-item
+								+e.nav-img(style='background-image: url(img/content/portfolio-img_3.jpg)')
+							+e.nav-item
+								+e.nav-img(style='background-image: url(img/content/portfolio-img_4.jpg)')
+					+e.col.col.col-lg
+						+e.view.slider
+							+e.view-item
+								+e.view-img(style='background-image: url(img/content/portfolio-img-lg_1.jpg)')
+							+e.view-item
+								+e.view-img(style='background-image: url(img/content/portfolio-img-lg_1.jpg)')
+							+e.view-item
+								+e.view-img(style='background-image: url(img/content/portfolio-img-lg_1.jpg)')
+							+e.view-item
+								+e.view-img(style='background-image: url(img/content/portfolio-img-lg_1.jpg)')
+
+				+e.products.section
+					+e.H3.products-title.title-decor Товары в проекте
+					+b.catalog-slider._mod.slider
+						+e.item
+							+product-item('pop-model_1', 'Кресло для бара', 'FARANDOM', '26 500')(class='_mod')
+						+e.item
+							+product-item('pop-model_2', 'Кресло для бара', 'FUSANDA', '26 500')(class='_mod')
+						+e.item
+							+product-item('pop-model_3', 'Кресло для бара', 'GALORIYA', '26 500', '16 200')(class='_mod')
+						+e.item
+							+product-item('pop-model_4', 'Кресло для бара', 'FROZA', '26 500', '16 200')(class='_mod')
+						+e.item
+							+product-item('pop-model_1', 'Кресло для бара', 'FARANDOM', '26 500')(class='_mod')
+						+e.item
+							+product-item('pop-model_1', 'Кресло для бара', 'FARANDOM', '26 500')(class='_mod')
+						+e.item
+							+product-item('pop-model_2', 'Кресло для бара', 'FUSANDA', '26 500')(class='_mod')
+						+e.item
+							+product-item('pop-model_3', 'Кресло для бара', 'GALORIYA', '26 500', '16 200')(class='_mod')
+						+e.item
+							+product-item('pop-model_4', 'Кресло для бара', 'FROZA', '26 500', '16 200')(class='_mod')
+						+e.item
+							+product-item('pop-model_1', 'Кресло для бара', 'FARANDOM', '26 500')(class='_mod')
+				+e.text.section
+					+e.H2.text-title.title Ресторан Avisio
+					+e.P.text-descr Помещение находится в центре города Новополоцк, в здании Дома культуры, которое использовалось ранее как танцевальный зал. Пожелание было превратить танцевальный зал в хороший ресторан. В этом ресторане должно быть не стыдно принять иностранных гостей предприятия "Нафтан" и в тоже время стать хорошим местом отдыха для населения города. Самой непростой задачей было сделать современное место с национальным характером. Заказчиком было акцентировано внимание, что типичных решений: « Буслы , забор и збаныне нужно». Мы создали современное место и национальными белорусскими деталями. Современные формы в смешении с деталями из белорусской культуры создают приятную эклектику.
+					+e.P.date-text Дата реализации проекта: 12.02.2018
+		//end portfolio
+
+		//begin portfolio
+		+b.SECTION.portfolio
+			.container
+				+e.row.row.js-portfolio-view
+					+e.col.col.col-lg
+						+e.nav.slider
+							+e.nav-item
+								+e.nav-img(style='background-image: url(img/content/portfolio-img_1.jpg)')
+							+e.nav-item
+								+e.nav-img(style='background-image: url(img/content/portfolio-img_2.jpg)')
+							+e.nav-item
+								+e.nav-img(style='background-image: url(img/content/portfolio-img_3.jpg)')
+							+e.nav-item
+								+e.nav-img(style='background-image: url(img/content/portfolio-img_4.jpg)')
+					+e.col.col.col-lg
+						+e.view.slider
+							+e.view-item
+								+e.view-img(style='background-image: url(img/content/portfolio-img-lg_1.jpg)')
+							+e.view-item
+								+e.view-img(style='background-image: url(img/content/portfolio-img-lg_1.jpg)')
+							+e.view-item
+								+e.view-img(style='background-image: url(img/content/portfolio-img-lg_1.jpg)')
+							+e.view-item
+								+e.view-img(style='background-image: url(img/content/portfolio-img-lg_1.jpg)')
+
+				+e.products.section
+					+e.H3.products-title.title-decor Товары в проекте
+					+b.catalog-slider._mod.slider
+						+e.item
+							+product-item('pop-model_1', 'Кресло для бара', 'FARANDOM', '26 500')(class='_mod')
+						+e.item
+							+product-item('pop-model_2', 'Кресло для бара', 'FUSANDA', '26 500')(class='_mod')
+						+e.item
+							+product-item('pop-model_3', 'Кресло для бара', 'GALORIYA', '26 500', '16 200')(class='_mod')
+						+e.item
+							+product-item('pop-model_4', 'Кресло для бара', 'FROZA', '26 500', '16 200')(class='_mod')
+						+e.item
+							+product-item('pop-model_1', 'Кресло для бара', 'FARANDOM', '26 500')(class='_mod')
+						+e.item
+							+product-item('pop-model_1', 'Кресло для бара', 'FARANDOM', '26 500')(class='_mod')
+						+e.item
+							+product-item('pop-model_2', 'Кресло для бара', 'FUSANDA', '26 500')(class='_mod')
+						+e.item
+							+product-item('pop-model_3', 'Кресло для бара', 'GALORIYA', '26 500', '16 200')(class='_mod')
+						+e.item
+							+product-item('pop-model_4', 'Кресло для бара', 'FROZA', '26 500', '16 200')(class='_mod')
+						+e.item
+							+product-item('pop-model_1', 'Кресло для бара', 'FARANDOM', '26 500')(class='_mod')
+				+e.text.section
+					+e.H2.text-title.title Ресторан Avisio
+					+e.P.text-descr Помещение находится в центре города Новополоцк, в здании Дома культуры, которое использовалось ранее как танцевальный зал. Пожелание было превратить танцевальный зал в хороший ресторан. В этом ресторане должно быть не стыдно принять иностранных гостей предприятия "Нафтан" и в тоже время стать хорошим местом отдыха для населения города. Самой непростой задачей было сделать современное место с национальным характером. Заказчиком было акцентировано внимание, что типичных решений: « Буслы , забор и збаныне нужно». Мы создали современное место и национальными белорусскими деталями. Современные формы в смешении с деталями из белорусской культуры создают приятную эклектику.
+					+e.P.date-text Дата реализации проекта: 12.02.2018
+		//end portfolio
+
+		//begin how-text
+		+b.SECTION.how-text.section
+			+e.container.container
+				+e.H2.title.title Как выбрать для рестрона?
+				+e.P Как и весь мировой прогресс, наша фабрика не стоит на месте, постоянно совершенствуя уже отлаженный за годы работы механизм производства мебели. Особое внимание уделяется мировым тенденциям и направлениям в мебельной индустрии. Уже сейчас мы предлагаем нашим клиентам широчайший выбор ткани для обивки мягкой мебели, и этот ассортимент постоянно пополняется. Естественно, усиливается и контроль качества материалов производимой продукции, что обеспечивает покупателям надежность и гарантию отличного выбора. Для жителей Минска, Витебска и других регионов доступен онлайн каталог мебельных тканей, который поможет удовлетворить любые Ваши нестандартные дизайнерские решения или запросы.
+		//end how-text

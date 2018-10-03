@@ -1,0 +1,64 @@
+//begin footer
++b.FOOTER.footer
+	+e.container.container
+		.row
+			+e.col._sm
+				+e.H6.title КАТАЛОГ
+				-
+					footerList = [
+					'Стулья ДЛЯ КАФЕ',
+					'КРЕСЛА ДЛЯ РЕСТОРАНОВ',
+					'СТОЛЫ ДЛЯ КАФЕ',
+					'ПОДСТОЛЬЯ',
+					'ДИВАНЫ ДЛЯ КАФЕ',
+					'ШКАФЫ ДЛЯ БАРОВ',
+					'ТУМБЫ',
+					'СТОЛЕШНИЦЫ'
+					]
+				+e.UL.list
+					for text in footerList
+						li: a(href='#!')= text
+			+e.col._sm
+				+e.H6.title МЕБЕЛЬ
+				-
+					footerList = [
+					'Мебель для ресторанов',
+					'мебель для баров',
+					'мебель дл я кафе',
+					'мебель для клубов',
+					'меебль loft',
+					'мебель для гостиниц'
+					]
+				+e.UL.list
+					for text in footerList
+						li: a(href='#!')= text
+			+e.col._sm
+				+e.H6.title УСЛУГИ
+				-
+					footerList = [
+					'ИЗГОТОВЛЕНИЕ МЕБЕЛИ НА ЗАКАЗ',
+					'ИНДИВИДУАЛЬНЫЙ ДИЗАЙН',
+					'ЗАМЕР',
+					'ПРОТОТИП'
+					]
+				+e.UL.list
+					for text in footerList
+						li: a(href='#!')= text
+			+e.col._sm
+				+e.H6.title КОНТАКТЫ
+				+e.contact
+					+e.A(href='tel:+74959207764') +7 (495) 920-77-64
+					+e.A(href='mailto:INFO@AREDOGROUP.RU') INFO@AREDOGROUP.RU
+			+e.col._md
+				+e.H6.title ПОДПИСКА НА НОВОСТИ
+				+e.news
+					+e.news-text
+						+e.P Получайте свежие новости о скидках и акциях.
+						+e.P Будьте в тренде вместе с AredoGroup
+					+e.FORM.news-form(action='#!' method='POST')
+						+b.form-field._has-submit
+							+e.INPUT.input(type='text' name='email' placeholder='Email Address' required)
+							+e.LABEL.submit-btn
+								+e.INPUT.submit(type='submit')
+								+i('arr-r-long')
+//end footer

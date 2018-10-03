@@ -1,0 +1,68 @@
+.portfolio
+   & + &
+      padding-top: 78px
+      border-top: 1px solid #e8e8e8
+      +xs
+         padding-top: 50px
+   &__breadcrumbs
+      padding: 26px 0
+   &__row
+      +sm
+         display: flex
+         flex-direction: column
+   &__col
+      &:nth-child(2)
+         +sm
+            order: -1
+            margin-bottom: 30px
+         +xs
+            margin-bottom: 15px
+   &__nav
+      .slick-list
+         margin: 0 -15px
+      &-item
+         width: 50% !important
+         padding: 0 15px
+         cursor: pointer
+         +xs
+            width: 100% !important
+         &:nth-child(1) ~ &
+            +xs
+               margin-top: 15px
+         &:nth-child(2) ~ &
+            margin-top: 30px
+      &-img
+         +ratio(270, 267)
+         +cover
+   &__view
+      .slider-btn
+         margin-top: -6px
+      .slider-btn_prev
+         left: 34px
+         +xs
+            left: 15px
+      .slider-btn_next
+         right: 34px
+         +xs
+            right: 15px
+      &-item
+      &-img
+         +ratio(570, 568)
+         +cover
+   
+   &__products
+      &-title
+         margin-bottom: 20px
+         
+   &__text
+      &-title
+         margin-bottom: 20px
+         letter-spacing: 2.1px
+      &-descr
+         &:not(:last-child)
+            margin-bottom: 25px
+      
+   &__date-text
+      color: #aeaeae
+      font-size: 14px
+      letter-spacing: 0.84px

@@ -1,0 +1,125 @@
+.production
+   &__text
+      padding-bottom: 78px
+      border-bottom: 1px solid $color-3
+   &__title
+      margin-bottom: 25px
+      letter-spacing: 2.1px
+   &__block
+      &-title
+         margin-bottom: 30px
+         letter-spacing: 0.86px
+   &__col
+      &:nth-child(1) ~ &
+         +sm
+            padding: 30px 15px 0
+      &:nth-child(2) ~ &
+         padding: 62px 15px 0
+   &__item
+      $parent: &
+      +clr
+      +xs
+         display: flex
+         flex-direction: column
+      &-img-wrap
+         float: left
+         width: 299px
+         height: 296px
+         +cover-img
+         +md
+            width: 209px
+            height: 206px
+         +xs
+            width: 100%
+            height: auto
+            margin-bottom: 10px
+         #{$parent}_img-right &
+            order: -1
+      &-text
+         float: left
+         width: calc(100% - 299px)
+         +md
+            width: calc(100% - 209px)
+         +xs
+            width: 100%
+         #{$parent}_img-left &
+            padding-left: 35px
+            +md
+               padding-left: 20px
+            +xs
+               padding-left: 0
+         #{$parent}_img-right &
+            padding-right: 35px
+            +md
+               padding-right: 20px
+            +xs
+               padding-right: 0
+      &-title
+         margin: -6px 0 18px
+         font-size: 25px
+         font-weight: 700
+         line-height: 36px
+         letter-spacing: 1.5px
+         +md
+            margin-bottom: 5px
+            font-size: 23px
+
+.promo
+   padding: 40px 0 18px
+   background-color: #ececec
+   +sm
+      padding: 50px 0
+   &__container
+      max-width: 1249px
+   &__inner
+      padding-left: 20px
+      letter-spacing: 0
+      font-size: 0
+      +sm
+         display: flex
+         justify-content: space-between
+         align-items: center
+      +xs
+         flex-direction: column
+         padding-left: 0
+   &__text
+      display: inline-block
+      vertical-align: middle
+      margin-top: -60px
+      width: percentage(679 / 1199)
+      padding-right: 50px
+      margin-right: 30px
+      +sm
+         margin: 0
+         padding-right: 0
+         max-width: 400px
+      +xs
+         width: 100%
+         max-width: none
+   &__img
+      display: inline-block
+      vertical-align: middle
+      width: calc(100% - 679px)
+      margin-left: -30px
+      +ratio(515, 580)
+      +cover
+      +sm
+         width: 30%
+      +xs
+         order: -1
+         width: 50%
+         margin: 0 0 20px
+   &__title
+      margin-bottom: 30px
+      letter-spacing: 2.1px
+      +xs
+         margin-bottom: 15px
+   &__descr
+      font-size: 16px
+      letter-spacing: 0.96px
+      
+.banner
+   height: 557px
+   +cover
+   +sm
+      height: 380px

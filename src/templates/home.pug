@@ -1,0 +1,145 @@
+extends layouts/_layout
+
+block variables
+	-title = 'Главная'
+
+block content
+
+	+b.main
+		//begin screen
+		+b.SECTION.screen._home
+			+e.sliders-container.container
+				+e.slider-wrap
+					+e.slider.slider
+						-i = 0
+						while i < 3
+							+e.slider-item
+								+e.slider-item-inner
+									+e.slider-img(style='background-image: url(img/bg/screen-sld_1.jpg)')
+									+e.slider-label
+									+e.slider-content
+										+e.H2.slider-title Дизайнерская мебель для ресторонов
+										+e.P.slider-descr Опыт производства 10 лет
+										+btn('Каталог', '_white screen__slider-btn')
+							-i++
+				+e.prod-slider-container.container
+					+b.prod-slider.screen__prod-slider.slider
+						-i = 0
+						while i < 3
+							+e.A.item(href='#!')
+								+e.item-img
+									+e.IMG(src='img/products/prod-slider_1.png' alt='image')
+								+e.item-text
+									+e.H6.item-name Стул для бара
+									+e.SPAN.item-brand GUSSE
+							-i++
+
+			+b.soc-sidebar._home
+				+e.list
+					+e.A.link(href='#!')
+						+i('vk')
+					+e.A.link(href='#!')
+						+i('fb')
+					+e.A.link(href='#!')
+						+i('inst')
+					+e.A.link(href='#!')
+						+i('od')
+					+e.A.link(href='#!')
+						+i('at')
+				+e.P.title Мы в социальных сетях
+
+		//end screen
+	
+		//begin assort
+		+b.SECTION.assort.section
+			.container.container
+				.row
+					.col.col-md
+						+e.A.item._color-1(href='#!')
+							+e.IMG.item-img._mid(src='img/products/assort-1.png' alt='image')
+							+e.H3.item-title МЕБЕЛЬ
+								br
+								| ДЛЯ РЕСТОРАНОВ
+					.col.col-md
+						+e.A.item._color-2(href='#!')
+							+e.IMG.item-img(src='img/products/assort-2.png' alt='image')
+							+e.H3.item-title МЕБЕЛЬ
+								br
+								| ДЛЯ баров
+					.col.col-md
+						+e.A.item._color-3(href='#!')
+							+e.IMG.item-img(src='img/products/assort-3.png' alt='image')
+							+e.H3.item-title МЕБЕЛЬ
+								br
+								| ДЛЯ кафе
+		//end assort
+
+		//begin pop-models
+		+b.SECTION.pop-models.section
+			+e.container.container
+				+e.H2.title.title-decor Популярные модели
+				+b.catalog-slider.slider
+					+e.item
+						+product-item('pop-model_1', 'Кресло для бара', 'FARANDOM', '26 500')
+					+e.item
+						+product-item('pop-model_2', 'Кресло для бара', 'FUSANDA', '26 500')
+					+e.item
+						+product-item('pop-model_3', 'Кресло для бара', 'GALORIYA', '26 500', '16 200')
+					+e.item
+						+product-item('pop-model_4', 'Кресло для бара', 'FROZA', '26 500', '16 200')
+					+e.item
+						+product-item('pop-model_1', 'Кресло для бара', 'FARANDOM', '26 500')
+					+e.item
+						+product-item('pop-model_1', 'Кресло для бара', 'FARANDOM', '26 500')
+					+e.item
+						+product-item('pop-model_2', 'Кресло для бара', 'FUSANDA', '26 500')
+					+e.item
+						+product-item('pop-model_3', 'Кресло для бара', 'GALORIYA', '26 500', '16 200')
+					+e.item
+						+product-item('pop-model_4', 'Кресло для бара', 'FROZA', '26 500', '16 200')
+					+e.item
+						+product-item('pop-model_1', 'Кресло для бара', 'FARANDOM', '26 500')
+		//end pop-models
+
+		//begin clients
+		+b.SECTION.clients.section
+			+e.container.container
+				+e.H2.title.title-decor Клиенты
+				+e.slider
+					-i = 0
+					while i < 3
+						+e.slider-item
+							+e.slider-link(href='#!')
+								+e.slider-img(style='background-image: url(img/clients/clients-1_bg.jpg)')
+								+e.slider-logo
+									+e.IMG(src='img/clients/clients-1_logo.png' alt='image')
+						+e.slider-item
+							+e.slider-link(href='#!')
+								+e.slider-img(style='background-image: url(img/clients/clients-1_bg.jpg)')
+								+e.slider-logo
+									+e.IMG(src='img/clients/clients-1_logo.png' alt='image')
+						+e.slider-item
+							+e.slider-link(href='#!')
+								+e.slider-img(style='background-image: url(img/clients/clients-2_bg.jpg)')
+								+e.slider-logo
+									+e.IMG(src='img/clients/clients-2_logo.png' alt='image')
+						+e.slider-item
+							+e.slider-link(href='#!')
+								+e.slider-img(style='background-image: url(img/clients/clients-2_bg.jpg)')
+								+e.slider-logo
+									+e.IMG(src='img/clients/clients-2_logo.png' alt='image')
+						-i++
+		//end clients
+
+		//begin article-section
+		+b.ARTICLE.article-section
+			+e.container.container
+				.row
+					+e.col.col.col-lg
+						+e.title.title Фабричное производство
+							br
+							| мебели для ресторанов и кафе
+						+e.P.text Одним из самых важных показателей качества нашей жизни всегда было количество досуга и развлечений и уровень     сервиса, на котором все построено. В нашей стране с каждым годом все лучшее развивается данная сфера. И одно из самых популярных и посещаемых мест для досуга, куда мы чаще всего приходим, чтобы избавиться от стресса рабочих будней – это всеми нами любимые, изысканные  рестораны, уютные кафе и по-дружески приветливые бары. Все меняется, и люди становятся все требовательнее к качеству товаров и услуг. И в каждом из вышеуказанных заведений в создании комфортной и неповторимой обстановки принимают участие два основных критерия – это интерьер и, конечно же, удобная, оригинальная и качественная мебель для ресторанов, уютная и практичная мебель для кафе, креативная и солидная мебель для баров, являющаяся своеобразной «одежкой», по которой встречают нового знакомого. Именно разработка и производство мебели для кафе, баров и ресторанов стало делом жизни для нашей команды. Мебельная фабрика «АредоГруп» вот уже более 10 лет профессионально занимается производством эксклюзивной мебелью.
+					+e.col.col.col-lg
+						+e.img(style='background-image: url(img/content/article_img-1.jpg)')
+		//end article-section

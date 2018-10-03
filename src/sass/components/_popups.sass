@@ -1,0 +1,126 @@
+.popup
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  opacity: 0
+  visibility: hidden
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+  z-index: 1300
+  overflow: auto
+  outline: 0
+  text-align: center
+  font-size: 0
+  transform: translate3d(0, 0, 0)
+  background-color: rgba(#000,.8)
+  transition: opacity .3s ease, transform .5s ease, visibility .5s
+  will-change: opacity, transform
+  $parent: &
+  &:after
+    content: ''
+    display: inline-block
+    vertical-align: middle
+    width: 0
+    height: 100%
+    
+  &.opened
+    opacity: 1
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+    visibility: visible
+  &__close
+    position: absolute
+    top: 10px
+    right: 20px
+    z-index: 10
+    cursor: pointer
+    padding: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    border: 0
+    width: 32px
+    height: 32px
+    &:hover svg
+      fill: $color-7
+    svg
+      fill: $black
+      width: 17px
+      height: 17px
+      +trs
+      
+  &__container
+    display: inline-block
+    vertical-align: middle
+    max-width: 440px
+    width: 100%
+    position: relative
+    padding: 0 15px
+    margin: 30px auto
+    transition: opacity .5s ease, transform .5s ease
+    transform: translate3d(0, -100px, 0)
+    will-change: transform, opacity
+    text-align: left
+    border-radius: 5px
+    +mob-fix
+
+body.popup-opened
+  overflow: hidden
+
+.popup.opened .popup__container
+  -webkit-transform: translate3d(0, 0, 0)
+  -moz-transform: translate3d(0, 0, 0)
+  transform: translate3d(0, 0, 0)
+  
+.calc-popup
+  padding: 35px 40px 40px
+  background: $white
+  +xs
+    padding: 40px 15px 35px
+  &__top-text
+    margin-bottom: 25px
+    padding-bottom: 20px
+    border-bottom: 1px solid #aeaeae
+    text-align: center
+  &__title
+    margin-bottom: 10px
+    font-size: 30px
+    span
+      font-weight: 400
+  &__descr
+    max-width: 250px
+    margin: 0 auto
+    font-size: 18px
+    line-height: 24px
+    +xs
+      font-size: 16px
+  &__form
+    text-align: center
+    &-field
+      &:not(:first-child)
+        margin-top: 5px
+  &__upload
+    position: relative
+    margin-bottom: 30px
+    padding-bottom: 20px
+    &::after
+      position: absolute
+      bottom: -1px
+      left: 5px
+      right: 5px
+      border-bottom: 1px solid rgba(#959595, .4)
+      content: ''
+
+.thanks-popup
+  padding: 50px
+  background: $white
+  text-align: center
+  +xs
+    padding: 50px 30px
+  &__text
+    font-size: 20px
+    font-weight: 700
+    line-height: 24px
+    text-transform: uppercase
+  &__btn
+    display: none
